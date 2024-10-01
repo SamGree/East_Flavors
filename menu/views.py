@@ -1,6 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
-# Create your views here.
-def my_menu(request):
-    return HttpResponse("Hello, menu!")
+def menu_view(request):
+    return render(request, 'home.html')  # Renders the home.html template
