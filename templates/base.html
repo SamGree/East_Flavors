@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EastSt. Website</title>
+  <!-- Add Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMKU5jwE5KnsHHSZoDwiFyRkF+ImpeGTMChgH0B" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  
+    
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="bbq.png" alt="EastSt. Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">MENU</a></li>
+      <li><a href="#">LOCATION</a></li>
+      <li><a href="#">BOOKINGS</a></li>
+    </ul>
+  </nav>
+
+  <!-- Container for image with scrollbar -->
+  <div class="image-container">
+    <img src="{% static 'img/home1.jpg' %}" alt="BBQ Image">
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="address">
+        <h4>Address</h4>
+        <p>23A East St, N'Ards, BT23 7EN</p>
+      </div>
+      <div class="social-icons">
+        <!-- Font Awesome icons -->
+        <a href="mailto:info@example.com" target="_blank">
+          <i class="fas fa-envelope"></i> <!-- Email Icon -->
+        </a>
+        <a href="https://instagram.com" target="_blank">
+          <i class="fab fa-instagram"></i> <!-- Instagram Icon -->
+        </a>
+        <a href="https://facebook.com" target="_blank">
+          <i class="fab fa-facebook"></i> <!-- Facebook Icon -->
+        </a>
+      </div>
+      <div class="established">
+        <p>est.2024</p>
+      </div>
+    </div>
+  </footer>
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

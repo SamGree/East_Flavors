@@ -1,0 +1,103 @@
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center;
+    padding: 15px;
+    background-color: #111;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center the nav links */
+    flex: 1; /* Allow this to take available space */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+
+  .nav-links li {
+    margin: 0 15px; /* Space between links */
+  }
+
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  /* Container for image with scroll */
+
+  img {
+    width: 100%;
+  }
+
+  /* Image Styles */
+  .hero-image {
+    width: 100%; /* Image should fill container width */
+  }
+
+  /* Footer Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer {
+    background-color: #061918; /* Footer background color */
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .address h4, .established p {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .address p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+  }
+
+  /* Social Icons Styling */
+  .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 24px; /* Icon size */
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: #FFD700; /* Hover color change */
+  }
+
+  .established p {
+    font-size: 16px;
+  }
