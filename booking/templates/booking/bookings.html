@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {%load static%} {% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/bookings.css' %}" />
+{% endblock head %} {% block content %}
+
+<div class="bookings-wrapper">
+  <h1 id="heading">Your Bookings</h1>
+  <div class="bookings">
+    {% for booking in bookings %}
+    <div class="booking" data-bookingId="{{booking.id}}">
+      <!-- I put span here so booking info is in center because of space-between property  -->
+      <span></span>
+      <p>{{booking}}</p>
+      <button class="cancel-booking">Cancel Booking</button>
+    </div>
+    {%endfor %}
+  </div>
+</div>
+
+<script async src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+<script defer src="{% static 'js/bookings.js' %}"></script>
+{% endblock %}

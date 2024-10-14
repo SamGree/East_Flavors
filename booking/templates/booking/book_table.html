@@ -1,18 +1,26 @@
 {% extends 'base.html' %}
-
+{%load static%}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/book-table.css' %}" />
+{% endblock head %}
 {% block content %}
-  <h2>Make a Reservation</h2>
-  <form method="POST">
-    {% csrf_token %}
-    <label for="date">Date:</label>
-    <input type="date" name="date" required>
-    
-    <label for="time">Time:</label>
-    <input type="time" name="time" required>
-    
-    <label for="guests">Number of Guests:</label>
-    <input type="number" name="guests" required>
-    
-    <button type="submit">Submit</button>
-  </form>
+<div class="book-table-wrapper">
+  <div class="image">
+    <h1>5-star service!</h1>
+    <img src="{% static 'img/cover.jpg' %}" id="restaurant-image" />
+  </div>
+  <div class="inner-wrapper">
+    <h2 id="headline">Book a Table</h2>
+    <p id="alert">Restaurant works between 9 AM and 11 PM.</p>
+    {% if form.non_field_errors %}
+    <div class="error">{{ form.non_field_errors }}</div>
+    {% endif %}
+
+    <form method="post" class="book-table-form">
+      {% csrf_token %} {{ form.as_p }}
+
+      <button type="submit" class="book-button">Book Now</button>
+    </form>
+  </div>
+</div>
 {% endblock %}
