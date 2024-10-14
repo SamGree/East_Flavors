@@ -1,22 +1,98 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
-from .models import Reservation
-from django.utils import timezone
+from django.contrib.auth.decorators import login_required
+from django.urls import reverse
+from django.http import JsonResponse
+
+from .forms import UserRegistrationForm, CustomLoginForm, BookingForm
+from .models import Table, Booking
+from .utils import find_available_table
+import json
+
+
+# AUTHENTICATION
+def register(request):
+    if request.method == 'POST':
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('book-table')
+    else:
+        form = UserRegistrationForm()
+    return render(request, 'booking/register.html', {'form': form})
+
+
+def user_login(request):
+    if request.method == 'POST':
+        form = CustomLoginForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('book-table')
+    else:
+        form = CustomLoginForm()
+    return render(request, 'booking/login.html', {'form': form})
+
 
 @login_required
-def make_reservation(request):
-    if request.method == "POST":
-        date = request.POST.get('date')
-        time = request.POST.get('time')
-        guests = request.POST.get('guests')
-        
-        Reservation.objects.create(
-            user=request.user,
-            date=date,
-            time=time,
-            number_of_guests=guests
-        )
-        return redirect('reservation_success')
-    return render(request, 'booking/make_reservation.html')
+def user_logout(request):
+    logout(request)
+    return redirect('login')
 
-# Create your views here.
+
+# BOOKING
+@login_required
+def book_table(request):
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        print(form.data)
+        if form.is_valid():
+            date = form.cleaned_data['date']
+            time = form.cleaned_data['time']
+            guests = form.cleaned_data['guests']
+
+            # Find an available table for the given date, time, and number of guests
+            table = find_available_table(date, time, guests)
+
+            if table:
+                # Create the booking if an available table is found
+                booking = Booking.objects.create(
+                    user=request.user,
+                    table=table,
+                    date=date,
+                    time=time,
+                    guests=guests
+                )
+                return redirect(reverse('user-bookings'))
+            else:
+                # No available table found, show an error message
+                form.add_error(
+                    None, "No available table for the selected date, time, and number of guests.")
+
+    else:
+        form = BookingForm()
+    return render(request, 'booking/book_table.html', {'form': form})
+
+
+# GET ALL BOOKINGS OF ONE USER
+@login_required
+def user_bookings(request):
+    bookings = Booking.objects.filter(user=request.user)
+    context = {'bookings': bookings}
+    return render(request, 'booking/bookings.html', context)
+
+
+@login_required
+def cancel_booking(request, id):
+    booking = Booking.objects.filter(user=request.user, id=id)
+    if booking.exists():
+        booking.delete()
+        response_data = {'message': "Booking canceled successfully!"}
+        return JsonResponse(response_data, status=200)
+    else:
+        return JsonResponse({'error': "Booking not found or you don't have permission to cancel it."}, status=404)
