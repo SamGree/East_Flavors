@@ -1,4 +1,16 @@
 from django.shortcuts import render
+from .models import Menu
+
+
+def home_view(request):
+    return render(request, 'menu/home.html')
+
 
 def menu_view(request):
-    return render(request, 'base.html')  # Renders the home.html template
+    menu = Menu.objects.all()
+    context = {
+        'menu_list': menu
+    }
+    return render(request, 'menu/menu.html', context)
+
+
