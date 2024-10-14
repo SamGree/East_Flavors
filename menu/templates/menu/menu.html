@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+{%load static%} 
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}" />
+{% endblock head %} 
+{% block content %}
+<div class="menu-wrapper">
+  <div class="inner-wrapper">
+    <h2 id="headline">Available dishes</h2>
+    <div class="menu-items">
+      {% for menu in menu_list %}
+      <div class="menu-item">
+        {% if menu.image %}
+        <img src="{{ menu.image.url }}" id="menu-image" />
+        {% endif %}
+        <div id="text">
+          <h1 id="title">{{menu.name}}</h1>
+          <p id="description">{{menu.description}}</p>
+          <p id="price">€ {{menu.price}}</p>
+        </div>
+      </div>
+
+      {%endfor%}
+    </div>
+  </div>
+</div>
+{% endblock %}
