@@ -1,0 +1,91 @@
+.book-table-wrapper {
+    background-color: var(--color-grey-0);
+    min-height: 98vh;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    padding: 10px 5%;
+  }
+  
+  .book-table-wrapper .image {
+    width: 90%;
+  }
+  .book-table-wrapper .image h1 {
+    text-transform: uppercase;
+    margin: 30px 0;
+    text-align: center;
+    color: var(--color-orange-400);
+  }
+  .book-table-wrapper .image #restaurant-image {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .book-table-wrapper .inner-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .book-table-wrapper .inner-wrapper #headline {
+    font-size: 3rem;
+  }
+  
+  .book-table-wrapper .inner-wrapper #alert {
+    background-color: var(--color-orange-400);
+    padding: 5px;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .book-table-wrapper .inner-wrapper .error {
+    background-color: var(--color-red-800);
+    padding: 5px;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .book-table-wrapper .inner-wrapper .book-table-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+  }
+  
+  .book-table-wrapper .inner-wrapper .book-table-form > p {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .book-table-wrapper .inner-wrapper .book-table-form input {
+    color: var(--color-grey-0);
+    padding: 3px 10px;
+  }
+  
+  .book-table-wrapper .inner-wrapper .book-table-form .book-button {
+    background-color: var(--color-blue-100);
+    padding: 10px;
+    text-align: center;
+    color: var(--color-grey-900);
+    border: none;
+    transition: all 0.3s;
+  }
+  
+  .book-table-wrapper .inner-wrapper .book-table-form .book-button:hover {
+    background-color: var(--color-blue-100);
+    transform: scale(1.05);
+    cursor: pointer;
+    font-size: 1.7rem;
+  }
+  
+  @media screen and (max-width: 769px) {
+    .book-table-wrapper .image {
+      display: none;
+    }
+  }
+  
