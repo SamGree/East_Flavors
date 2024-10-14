@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{%load static%} 
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
+{% endblock %} 
+{% block content %}
+<div class="home-wrapper">
+  <div class="hero">
+    {% if request.user.is_authenticated %}
+    <h2 id="headline">Welcome <span id="highlight-username"> {{request.user|title}}</span>!</h2>
+    <div class="action-btns">
+      <a href="{% url 'menu' %}">
+        <button>Explore Menu</button>
+      </a>
+      <a href="{% url 'book-table' %}">
+        <button>Book a table</button>
+      </a>
+    </div>
+    {%else%}
+    <h2 id="headline">Welcome Guest</h2>
+    <div class="action-btns">
+      <a href="{% url 'menu' %}">
+        <button>Explore Menu</button>
+      </a>
+      <a href="{% url 'login' %}">
+        <button>Login and book a table</button>
+      </a>
+    </div>
+    {%endif%}
+  </div>
+  <div class="menu">
+    <h1>Find your best food</h1>
+    <div class="menu-wrapper">
+      <div class="menu-item">
+        <img src="{% static 'img/chicken.jpg' %}" alt="menu-item" />
+      </div>
+      <div class="menu-item">
+        <img src="{% static 'img/chicken.jpg' %}" alt="menu-item" />
+      </div>
+      <div class="menu-item">
+        <img src="{% static 'img/chicken.jpg' %}" alt="menu-item" />
+      </div>
+
+      <div class="menu-item">
+        <img src="{% static 'img/chicken.jpg' %}" alt="menu-item" />
+      </div>
+      <div class="menu-item">
+        <img src="{% static 'img/chicken.jpg' %}" alt="menu-item" />
+      </div>
+      <div class="menu-item">
+        <img src="{% static 'img/chicken.jpg' %}" alt="menu-item" />
+      </div>
+    </div>
+    <button id="explore-menu">Explore Menu</button>
+  </div>
+  <div class="about">
+    <h1>About Us</h1>
+    <div class="about-text">
+      <img src="{% static 'img/chicken.jpg' %}" alt="menu-item" />
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam mollitia cupiditate, ut
+        nam nemo earum maxime optio rem assumenda blanditiis aliquid quos repudiandae obcaecati illo
+        et asperiores omnis numquam autem deleniti dolores non officiis impedit voluptatum sed?
+        Debitis, perferendis at. Velit molestiae qui accusantium suscipit. Sed nulla vitae obcaecati
+        ipsam.
+      </p>
+    </div>
+  </div>
+
+  <div class="about">
+    <h1>Find Us</h1>
+    <div class="about-text">
+      <!-- MAP -->
+      <img src="{% static 'img/chicken.jpg' %}" alt="menu-item" />
+      <div class="contact">
+        <div>
+          <p>Phone</p>
+          <p>+123 123 123 123</p>
+        </div>
+        <div>
+          <p>Email</p>
+          <p>example@gmail.com</p>
+        </div>
+        <div>
+          <p>Address</p>
+          <p>John Doe 34e</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
