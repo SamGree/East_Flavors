@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-62y^n-^hs%)y=i)4=p@y@_17sghozp$1x@bt9hvubg*_r(032)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-samgree-eastflavors-li2crwtl6ah.ws-eu116.gitpod.io',
 '.herokuapp.com']
@@ -54,6 +54,8 @@ INSTALLED_APPS = [
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'login'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -140,6 +142,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
