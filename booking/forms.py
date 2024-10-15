@@ -22,7 +22,7 @@ class CustomLoginForm(AuthenticationForm):
 class BookingForm(forms.ModelForm):
     today = datetime.date.today()
     opening_time = datetime.time(11, 0)
-    closing_time = datetime.time(9, 0)
+    closing_time = datetime.time(23, 0)
     date = forms.DateField(
         widget=forms.DateInput(attrs={'type': 'date', 'min': today}),
         label='Booking Date'

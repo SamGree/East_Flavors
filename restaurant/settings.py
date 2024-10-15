@@ -25,11 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-62y^n-^hs%)y=i)4=p@y@_17sghozp$1x@bt9hvubg*_r(032)'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-samgree-eastflavors-li2crwtl6ah.ws-eu116.gitpod.io',
+'sam-restaurant-booking-8109bf42cfff.herokuapp.com',
 '.herokuapp.com']
 
 
