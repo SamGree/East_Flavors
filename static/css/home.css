@@ -8,8 +8,9 @@
 }
 
 .home-wrapper #headline {
-  font-size: 8rem;
+  font-size: 4rem;
   text-align: center;
+  padding-top: 14rem;
 }
 
 .home-wrapper .hero {
