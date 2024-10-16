@@ -101,10 +101,6 @@
   gap: 30px;
 }
 
-.map {
-  height: 46vh;
-  width: 100%;
-}
 
 @media screen and (max-width: 769px) {
   .home-wrapper {
