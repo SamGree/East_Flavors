@@ -18,27 +18,33 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="logo">
-        <img src="{% static 'img/logo.png' %}" alt="EastSt. Logo" />
-      </div>
+      <a href="{% url 'home' %}">
+        <div class="logo">
+          <img src="{% static 'img/logo.png' %}" alt="EastSt. Logo" />
+        </div>
+      </a>
+
       <ul class="nav-links">
         <li><a href="{% url 'home' %}">HOME</a></li>
         <li><a href="{% url 'menu' %}">MENU</a></li>
-        <li><a href="{% url 'user-bookings' %}">BOOKINGS</a></li>
-      </ul>
-      <ul class="nav-links">
         {% if request.user.is_authenticated %}
+        <li><a href="{% url 'user-bookings' %}">BOOKINGS</a></li>
         <li><a href="{% url 'logout' %}">Logout</a></li>
-
         {% else %}
         <li><a href="{% url 'login' %}">Login</a></li>
         <li><a href="{% url 'register' %}">Register</a></li>
         {% endif %}
       </ul>
-      <p>
+      <p id="user-greeting-nav">
         {% if request.user.is_authenticated %} Welcome
         <span id="highlight-username"> {{request.user.username | title}}</span> {%endif%}
       </p>
+      <!-- Hamburger Icon -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
 
     <!-- Container for image with scrollbar -->
@@ -52,7 +58,7 @@
       <div class="footer-content">
         <div class="address">
           <h4>Address</h4>
-          <p>Gjutformsgatan 6, 721 33 Västerås</p>
+          <p>23A East St, N'Ards, BT23 7EN</p>
         </div>
         <div class="social-icons">
           <!-- Font Awesome icons -->

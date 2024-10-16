@@ -2,8 +2,7 @@
 {%load static%}
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/book-table.css' %}" />
-{% endblock head %}
-{% block content %}
+{% endblock head %} {% block content %}
 <div class="book-table-wrapper">
   <div class="image">
     <h1>5-star service!</h1>
@@ -11,7 +10,7 @@
   </div>
   <div class="inner-wrapper">
     <h2 id="headline">Book a Table</h2>
-    <p id="alert">Restaurant works between 9 AM and 11 PM.</p>
+    <p id="alert">Restaurant works between 11 AM and 11 PM.</p>
     {% if form.non_field_errors %}
     <div class="error">{{ form.non_field_errors }}</div>
     {% endif %}

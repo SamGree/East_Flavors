@@ -42,7 +42,7 @@ def user_login(request):
 @login_required
 def user_logout(request):
     logout(request)
-    return redirect('login')
+    return redirect('home')
 
 
 # BOOKING
@@ -57,7 +57,7 @@ def book_table(request):
             guests = form.cleaned_data['guests']
 
             # Find an available table for the given date, time, and number of guests
-            table = find_available_table(date, time, guests)
+            table = find_available_table(date, time, guests, request.user)
 
             if table:
                 # Create the booking if an available table is found

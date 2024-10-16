@@ -51,5 +51,5 @@ class BookingForm(forms.ModelForm):
         closing_time = datetime.time(22, 0)
         if not (opening_time <= time <= closing_time):
             raise forms.ValidationError(
-                "Booking time must be within (11:00 AM - 11:00 PM).")
+                "Booking time must be within (11:00 AM - 10:00 PM).")
         return time

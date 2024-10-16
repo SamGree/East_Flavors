@@ -1,17 +1,14 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block head %}
+{% extends 'base.html' %} {% load static %} {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}" />
-{% endblock head %}
-{% block content %}
+{% endblock head %} {% block content %}
 <div class="register-wrapper">
-    <div class="inner-wrapper">
-        <h2 id="headline">Register</h2>
-        <form method="post" class="register-form">
-            {% csrf_token %} {{ form.as_p }}
-            <p id="login-link">Already a member? <a href="{% url 'login' %}">Login</a></p>
-            <button type="submit" class="register-button">Login</button>
-        </form>
-    </div>
+  <div class="inner-wrapper">
+    <h2 id="headline">Register</h2>
+    <form method="post" class="register-form">
+      {% csrf_token %} {{ form.as_p }}
+      <p id="login-link">Already a member? <a href="{% url 'login' %}">Login</a></p>
+      <button type="submit" class="register-button">Login</button>
+    </form>
+  </div>
 </div>
 {% endblock %}
