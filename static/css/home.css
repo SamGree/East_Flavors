@@ -100,6 +100,12 @@
   flex-direction: column;
   gap: 30px;
 }
+
+.map {
+  height: 30vh;
+  width: 100%;
+}
+
 @media screen and (max-width: 769px) {
   .home-wrapper {
     text-align: center;
