@@ -1,4 +1,5 @@
 :root {
+  & {
     --color-grey-0: #18212f;
     --color-grey-50: #111827;
     --color-grey-100: #1f2937;
@@ -36,7 +37,7 @@
 
     --image-grayscale: 10%;
     --image-opacity: 90%;
-  
+  }
 
   /* Indigo */
   --color-brand-50: #eef2ff;

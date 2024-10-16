@@ -1,76 +1,81 @@
 .register-wrapper {
-    background-color: var(--color-grey-0);
-    min-height: 97vh;
-  }
-  
-  .register-wrapper .inner-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 50px auto;
-  }
-  
-  .register-wrapper .inner-wrapper #headline {
-    font-size: 3rem;
-  }
-  
-  .register-wrapper .inner-wrapper #alert {
-    background-color: var(--color-orange-400);
-    padding: 5px;
-    color: white;
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  
-  .register-wrapper .inner-wrapper .error {
-    background-color: var(--color-red-800);
-    padding: 5px;
-    color: white;
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  
+  background-color: var(--color-grey-0);
+  /* min-height: 97vh; */
+}
+
+.register-wrapper .inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+}
+
+.register-wrapper .inner-wrapper #headline {
+  font-size: 3rem;
+}
+
+.register-wrapper .inner-wrapper #alert {
+  background-color: var(--color-orange-400);
+  padding: 5px;
+  color: white;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.register-wrapper .inner-wrapper .error {
+  background-color: var(--color-red-800);
+  padding: 5px;
+  color: white;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.register-wrapper .inner-wrapper .register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+}
+
+.register-wrapper .inner-wrapper .register-form > p {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.register-wrapper .inner-wrapper .register-form input {
+  color: var(--color-grey-0);
+  padding: 3px 10px;
+}
+
+.register-wrapper .inner-wrapper .register-form #login-link {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.register-wrapper .inner-wrapper .register-form #login-link a {
+  text-decoration: underline;
+}
+.register-wrapper .inner-wrapper .register-form .register-button {
+  background-color: var(--color-blue-100);
+  padding: 10px;
+  text-align: center;
+  color: var(--color-grey-900);
+  border: none;
+  transition: all 0.3s;
+}
+
+.register-wrapper .inner-wrapper .register-form .register-button:hover {
+  background-color: var(--color-blue-100);
+  transform: scale(1.05);
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+@media screen and (max-width: 769px) {
   .register-wrapper .inner-wrapper .register-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 50%;
+    width: 90%;
   }
-  
-  .register-wrapper .inner-wrapper .register-form > p {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  
-  .register-wrapper .inner-wrapper .register-form input {
-    color: var(--color-grey-0);
-    padding: 3px 10px;
-  }
-  
-  .register-wrapper .inner-wrapper .register-form #login-link {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-  }
-  
-  .register-wrapper .inner-wrapper .register-form #login-link a {
-    text-decoration: underline;
-  }
-  .register-wrapper .inner-wrapper .register-form .register-button {
-    background-color: var(--color-blue-100);
-    padding: 10px;
-    text-align: center;
-    color: var(--color-grey-900);
-    border: none;
-    transition: all 0.3s;
-  }
-  
-  .register-wrapper .inner-wrapper .register-form .register-button:hover {
-    background-color: var(--color-blue-100);
-    transform: scale(1.05);
-    cursor: pointer;
-    font-size: 1.7rem;
-  }
-  
+}

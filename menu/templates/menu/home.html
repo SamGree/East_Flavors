@@ -1,6 +1,9 @@
-{% extends 'base.html' %} {%load static%} {% block head %}
+{% extends 'base.html' %}
+{%load static%}
+{% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
-{% endblock %} {% block content %}
+{% endblock %}
+{% block content %}
 <div class="home-wrapper">
   <div class="hero">
     {% if request.user.is_authenticated %}
