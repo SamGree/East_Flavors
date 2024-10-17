@@ -8,7 +8,8 @@ from django.http import JsonResponse
 from .forms import UserRegistrationForm, CustomLoginForm, BookingForm
 from .models import Table, Booking
 from .utils import find_available_table
-import json
+import zoneinfo
+from django.utils import timezone
 
 
 # AUTHENTICATION
@@ -56,8 +57,11 @@ def book_table(request):
             time = form.cleaned_data['time']
             guests = form.cleaned_data['guests']
 
+            tzname = request.COOKIES.get("django_timezone")
+
             # Find an available table for the given date, time, and number of guests
-            table = find_available_table(date, time, guests, request.user)
+            table = find_available_table(
+                date, time, guests, request.user, tzname)
 
             if table:
                 # Create the booking if an available table is found

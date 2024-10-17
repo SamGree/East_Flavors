@@ -1,13 +1,25 @@
 from .models import Table, Booking
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone as datetime_timezone
+from datetime import datetime
+from pytz import timezone, utc
 
 
-def find_available_table(date, time, guests, user):
+def find_available_table(date, time, guests, user, tzname):
     print('FINDING TABLES...')
 
     requested_datetime = datetime.combine(date, time)
     one_hour = timedelta(hours=1)
 
+    print(requested_datetime)
+    local_tz = timezone(tzname)  # You can change this to your actual timezone
+    local_aware_datetime = local_tz.localize(requested_datetime)
+
+    # Convert the timezone-aware datetime to UTC
+    utc_datetime = local_aware_datetime.astimezone(utc)
+
+    print('utc', utc_datetime)
+    if utc_datetime < datetime.now(datetime_timezone.utc):
+        return None
     # Check if the user already has any booking within 1 hour before or after the requested time
     user_booking_conflict = Booking.objects.filter(
         user=user,
