@@ -159,5 +159,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-samgree-eastflavors-li2crwtl6ah.ws-eu116.gitpod.io',
+    'https://8000-samgree-eastflavors-45ndkqs7v56.ws.codeinstitute-ide.net',
 ]
