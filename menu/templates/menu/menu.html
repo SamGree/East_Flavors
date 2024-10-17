@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {%load static%}
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
 {% endblock head %}
 {% block content %}
 <div class="menu-wrapper">
@@ -11,7 +11,7 @@
       {% for menu in menu_list %}
       <div class="menu-item">
         {% if menu.image %}
-        <img src="{{ menu.image.url }}" id="menu-image" />
+        <img src="{{ menu.image.url }}" id="menu-image">
         {% endif %}
         <div id="text">
           <h1 id="title">{{menu.name}}</h1>

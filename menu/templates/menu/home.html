@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {%load static%}
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 {% endblock %}
 {% block content %}
 <div class="home-wrapper">
@@ -9,22 +9,14 @@
     {% if request.user.is_authenticated %}
     <h2 id="headline">Welcome to <span id="highlight-username"> East Flavors</span>!</h2>
     <div class="action-btns">
-      <a href="{% url 'menu' %}">
-        <button>Explore Menu</button>
-      </a>
-      <a href="{% url 'book-table' %}">
-        <button>Book a table</button>
-      </a>
+      <a href="{% url 'menu' %}" class="button-link"> Explore Menu </a>
+      <a href="{% url 'book-table' %}" class="button-link"> Book a table </a>
     </div>
     {%else%}
     <h2 id="headline">Welcome to <span id="highlight-username"> East Flavors</span>!</h2>
     <div class="action-btns">
-      <a href="{% url 'menu' %}">
-        <button>Explore Menu</button>
-      </a>
-      <a href="{% url 'login' %}">
-        <button>Login and book a table</button>
-      </a>
+      <a href="{% url 'menu' %}" class="button-link"> Explore Menu </a>
+      <a href="{% url 'login' %}" class="button-link"> Login and book a table </a>
     </div>
     {%endif%}
   </div>
@@ -32,33 +24,32 @@
     <h1>Find your best food</h1>
     <div class="menu-wrapper">
       <div class="menu-item">
-        <img src="{% static 'img/front1.jpg' %}" alt="menu-item" />
+        <img src="{% static 'img/front1.jpg' %}" alt="menu-item">
       </div>
       <div class="menu-item">
-        <img src="{% static 'img/front2.jpg' %}" alt="menu-item" />
+        <img src="{% static 'img/front2.jpg' %}" alt="menu-item">
       </div>
       <div class="menu-item">
-        <img src="{% static 'img/front3.jpg' %}" alt="menu-item" />
+        <img src="{% static 'img/front3.jpg' %}" alt="menu-item">
       </div>
 
       <div class="menu-item">
-        <img src="{% static 'img/front4.jpg' %}" alt="menu-item" />
+        <img src="{% static 'img/front4.jpg' %}" alt="menu-item">
       </div>
       <div class="menu-item">
-        <img src="{% static 'img/front55.jpg' %}" alt="menu-item" />
+        <img src="{% static 'img/front55.jpg' %}" alt="menu-item">
       </div>
       <div class="menu-item">
-        <img src="{% static 'img/front6.jpg' %}" alt="menu-item" />
+        <img src="{% static 'img/front6.jpg' %}" alt="menu-item">
       </div>
     </div>
-    <a href="{% url 'menu' %}">
-      <button id="explore-menu">Explore Menu</button>
-    </a>
   </div>
+  <a href="{% url 'menu' %}" class="button-link"> Explore Menu </a>
+</div>
   <div class="about">
     <h1>About Us</h1>
     <div class="about-text">
-      <img src="{% static 'img/findus.jpg' %}" alt="menu-item" />
+      <img src="{% static 'img/findus.jpg' %}" alt="menu-item">
       <p>
         Welcome to East Flavors, where tradition meets taste! For over 15 years, we’ve been bringing the rich and
         vibrant flavors of the Middle East to our community, offering a menu filled with authentic dishes crafted from
@@ -95,7 +86,7 @@
         </div>
       </div>
       <!-- MAP -->
-      <img src="{% static 'img/findus.jpg' %}" alt="menu-item" />
+      <img src="{% static 'img/findus.jpg' %}" alt="menu-item">
     </div>
   </div>
 </div>
