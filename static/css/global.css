@@ -132,7 +132,8 @@ button:has(svg) {
 
 a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
+  font-size: 2rem;
 }
 
 ul {
