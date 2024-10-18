@@ -42,6 +42,10 @@
   font-weight: bold;
 }
 
+/* This changes the color to red for the active page */
+.nav-links a.active {
+  color: red; 
+}
 /* Hamburger Icon Styles */
 .hamburger {
   display: none;
