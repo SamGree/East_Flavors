@@ -37,7 +37,7 @@
    
    - Contact Information:
 
-- footer
+- Footer
    - Social media icons for email, Instagram, and Facebook are visible.
 
 ---------------------
@@ -114,5 +114,74 @@ The page highlights a selection of dishes with images and brief descriptions. Th
 -----------------------
 -----------------------
 
+## Design Philosophy
+- User-Centered Design:
+  - The design emphasizes ease of navigation, ensuring users can quickly find what they need, such as menu options, table bookings, or location information. With clear sections like "Welcome to East Flavors" and "Find Your Best Food," users are guided seamlessly through the content.
 
-    
+- Visual Appeal and Authenticity:
+  - The homepage uses high-quality images of food that capture the essence of Middle Eastern cuisine. This visual appeal is key to making users feel connected to the experience, as the design reflects the vibrancy and diversity of the dishes.
+- Minimalistic Yet Informative:
+  - The layout is simple yet informative, with clean sections and minimal text, allowing the food and visuals to speak for themselves. This minimalism ensures that users are not overwhelmed but can still access all necessary information, such as contact details, opening hours, and the booking system.      
+- Color Palette.
+  - Primary Colors:(#061918) Used for the header and footer. 
+  - White (#FFFFFF): Applied for text and backgrounds to enhance readability and contrast against the darker elements.
+  - Red (#FF0000): Used as an accent color for the navigation links to indicate the active page.
+  - Body Background Colors: var(--color-grey-0).
+  - Background color of the dish descriptions: var(--color-red-100) this soft and warm tone makes the text readable and adds a light.
+  - Text Color black: used in the meals detailed descriptions and prices to maintain simplicity and clarity.
+- Typography.
+  - The typography for the East Flavors website is chosen to enhance readability, create a professional look, and align with the brand's modern and elegant feel. It is designed to ensure that the content is clear and accessible to all users while maintaining a cohesive visual identity.
+- Design Process.
+  - The design process for the East Flavors website was an iterative journey focused on creating a user-friendly, visually appealing, and functional restaurant website. As the sole designer, I managed all aspects of the design, from conceptualization to the final product, ensuring consistency and alignment with the restaurant’s brand.    
+  - Research & Inspiration:
+    - I began by researching modern restaurant websites, focusing on usability, aesthetics, and how food imagery can influence user engagement. Inspiration was drawn from both local and international restaurant brands to identify best practices in web design, user interface, and user experience.
+  - Branding & Visual Identity:
+    - Establishing a strong visual identity for East Flavors was a priority. I worked on creating a logo that reflects the restaurant’s Middle Eastern heritage with a modern twist. The color palette, fonts, and imagery were chosen to reflect warmth, authenticity, and a high-quality dining experience.
+  - Responsive Design:
+    - Recognizing that many users would access the website from mobile devices, I prioritized responsive design from the start. I ensured that all layouts would adapt seamlessly to different screen sizes, making the experience equally rich and engaging on mobile, tablet, and desktop. 
+  - Wireframing & Layout Design:
+    - Using wireframes, I sketched out the layout for each page, focusing on simplicity and ease of navigation. The homepage was designed to feature stunning food photography and an immediate call to action (menu exploration and booking a table).
+  - Finalization & Launch:
+    - The final design of East Flavors reflects a welcoming, vibrant, and user-friendly experience. Each element, from the color palette to typography and imagery, was thoughtfully crafted to engage users while showcasing the restaurant’s offerings and simplifying the online booking process.  
+    ------------------
+    ------------------
+## Models  
+  - Bookings Model
+
+  
+
+  - Menu Model
+
+  -------------------
+  -------------------
+## Technologies Used  
+    - Python Modules:
+
+      asgiref==3.8.1
+      cloudinary==1.36.0
+      dj-database-url==0.5.0
+      dj3-cloudinary-storage==0.0.6
+      Django==4.2.16
+      django-allauth==0.57.2
+      django-summernote==0.8.20.0
+      gunicorn==20.1.0
+      oauthlib==3.2.2
+      pillow==10.4.0
+      psycopg2==2.9.9
+      PyJWT==2.9.0
+      python3-openid==3.2.0
+      pytz==2024.2
+      requests-oauthlib==2.0.0
+      sqlparse==0.5.1
+      urllib3==1.26.20
+      whitenoise==6.5.0 
+
+
+  - Django:
+    - Main Python framework for project development. 
+    - django-allauth is used for managing user accounts in the booking system.
+    - Django's views handle database queries, while the Django Templating Engine renders the data onto the site pages, ensuring a dynamic and responsive user experience.
+  - Deployment Platforms:  
+    - Heroku: Cloud-based deployment platform.
+    - ElephantSQL: Database hosting service.
+   
