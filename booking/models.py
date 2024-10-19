@@ -3,6 +3,10 @@ from django.contrib.auth.models import User
 
 
 class Table(models.Model):
+    """
+    Model representing a table with a specific capacity.
+    Orders tables by descending capacity.
+    """
     capacity = models.IntegerField()
 
     class Meta:
@@ -13,6 +17,10 @@ class Table(models.Model):
 
 
 class Booking(models.Model):
+    """
+    Model representing a booking.
+    Includes fields for user, table, date, time, and number of guests.
+    """
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='bookings')
     table = models.ForeignKey(

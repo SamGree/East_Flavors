@@ -7,12 +7,20 @@ import datetime
 
 
 class UserRegistrationForm(UserCreationForm):
+    """
+    A form for user registration, inherits from UserCreationForm.
+    Specifies the fields: username, email, password1, and password2.
+    """
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
 
 class CustomLoginForm(AuthenticationForm):
+    """
+    A custom login form with placeholder attributes for username and password.
+    Defines the fields: username and password with their respective widgets.
+    """
     username = forms.CharField(max_length=150, widget=forms.TextInput(
         attrs={'placeholder': 'Username'}))
     password = forms.CharField(widget=forms.PasswordInput(
@@ -20,6 +28,10 @@ class CustomLoginForm(AuthenticationForm):
 
 
 class BookingForm(forms.ModelForm):
+    """
+    A form for booking, including date, time, and number of guests.
+    Ensures date is today or later, and time is between opening and closing.
+    """
     today = datetime.date.today()
     opening_time = datetime.time(11, 0)
     closing_time = datetime.time(23, 0)
