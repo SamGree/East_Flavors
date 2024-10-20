@@ -150,7 +150,7 @@ body {
 }
 
 /* Social Icons Styling */
-.social-icons a {
+.social-icons > a {
   color: white;
   margin: 0 10px;
   font-size: 24px; /* Icon size */
