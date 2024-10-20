@@ -184,4 +184,16 @@ The page highlights a selection of dishes with images and brief descriptions. Th
   - Deployment Platforms:  
     - Heroku: Cloud-based deployment platform.
     - ElephantSQL: Database hosting service.
+------------------
+------------------
+## Manual Testing
+- Manual test for home page.
+
+- Manual test for menu page.
+
+- Manual test for login page.
+
+- Manual test for register page
+
+
    
