@@ -16,7 +16,7 @@
 
 .bookings-wrapper #heading {
   text-align: center;
-  color: whtie;
+  color: white;
   font-size: 3rem;
   margin: 50px 0;
 }
@@ -37,7 +37,8 @@
   cursor: pointer;
 }
 
-.bookings-wrapper .bookings .booking .cancel-booking .add-booking {
+.bookings-wrapper .bookings .booking .cancel-booking,
+.bookings-wrapper .bookings .booking .add-booking {
   padding: 5px 10px;
   border-radius: 10px;
   background-color: var(--color-blue-100);
@@ -48,11 +49,13 @@
   transition: all 0.3s;
 }
 
-.bookings-wrapper .bookings .booking .cancel-booking .add-booking:hover {
+.bookings-wrapper .bookings .booking .cancel-booking:hover,
+.bookings-wrapper .bookings .booking .add-booking:hover {
   transform: scale(1.1);
   cursor: pointer;
   background-color: var(--color-red-700);
 }
+
 
 @media screen and (max-width: 1024px) {
   .bookings-wrapper .bookings {
