@@ -11,7 +11,7 @@
       {% for menu in menu_list %}
       <div class="menu-item">
         {% if menu.image %}
-        <img src="{{ menu.image.url }}" id="menu-image">
+        <img src="{{ menu.image.url }}" id="menu-image" alt="{{ menu.name }} dish">
         {% endif %}
         <div id="text">
           <h1 id="title">{{menu.name}}</h1>
