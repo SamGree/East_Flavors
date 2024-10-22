@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from .models import Menu
 
+
 class MenuModelTest(TestCase):
     def setUp(self):
         # Create sample menu items to test the model
@@ -20,7 +21,9 @@ class MenuModelTest(TestCase):
         # Check if the menu items were created and fields are correct
         self.assertEqual(self.menu_item1.name, "Spaghetti")
         self.assertEqual(self.menu_item1.price, 12.50)
-        self.assertEqual(self.menu_item2.description, "Crisp romaine lettuce with Caesar dressing")
+        self.assertEqual(
+            self.menu_item2.description,
+            "Crisp romaine lettuce with Caesar dressing")
 
     def test_menu_str_method(self):
         # Test the __str__ method of the Menu model
@@ -54,4 +57,3 @@ class MenuViewsTest(TestCase):
         response = self.client.get(reverse('menu'))
         self.assertContains(response, 'Spaghetti')
         self.assertEqual(len(response.context['menu_list']), 1)
-

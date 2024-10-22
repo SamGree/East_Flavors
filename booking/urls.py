@@ -10,5 +10,9 @@ urlpatterns = [
     # bookings
     path('book-table/', views.book_table, name='book-table'),
     path('user-bookings/', views.user_bookings, name='user-bookings'),
-    path('cancel-booking/<int:id>/', views.cancel_booking, name='cancel-booking'),
-]
+    path(
+        'cancel-booking/<int:id>/',
+        views.cancel_booking,
+        name='cancel-booking'),
+    ]
+

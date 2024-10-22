@@ -30,4 +30,5 @@ class Booking(models.Model):
     guests = models.IntegerField()
 
     def __str__(self):
-        return f"Booking for {self.user.username.capitalize()} on {self.date} at {self.time} for {self.guests} guests"
+        return f"Booking for {self.user.username.capitalize()} on {
+            self.date} at {self.time} for {self.guests} guests"

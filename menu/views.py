@@ -12,5 +12,3 @@ def menu_view(request):
         'menu_list': menu
     }
     return render(request, 'menu/menu.html', context)
-
-

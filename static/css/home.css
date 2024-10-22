@@ -28,6 +28,7 @@
   gap: 20px;
   margin: 50px auto;
 }
+
 .home-wrapper .action-btns button {
   padding: 5px 10px;
   border-radius: 10px;
@@ -84,6 +85,7 @@
 .about h1 {
   margin: 30px 0;
 }
+
 .about-text {
   display: flex;
   justify-content: space-between;
@@ -101,19 +103,21 @@
   gap: 30px;
 }
 
-
 @media screen and (max-width: 769px) {
   .home-wrapper {
     text-align: center;
   }
+
   .home-wrapper .action-btns {
     display: flex;
     flex-direction: column;
   }
+
   .home-wrapper .action-btns button {
     font-size: 2.2rem;
     padding: 7px 12px;
   }
+
   .menu-wrapper {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -124,6 +128,7 @@
     align-items: flex-start;
     width: 100%;
   }
+  
   .about-text img {
     width: 100% !important;
   }

@@ -58,6 +58,7 @@
 .register-wrapper .inner-wrapper .register-form #login-link a {
   text-decoration: underline;
 }
+
 .register-wrapper .inner-wrapper .register-form .register-button {
   background-color: var(--color-blue-100);
   padding: 10px;

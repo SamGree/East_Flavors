@@ -20,7 +20,8 @@ def find_available_table(date, time, guests, user, tzname):
     print('utc', utc_datetime)
     if utc_datetime < datetime.now(datetime_timezone.utc):
         return None
-    # Check if the user already has any booking within 1 hour before or after the requested time
+    # Check if the user already has any booking within 1 hour before
+    # or after the requested time
     user_booking_conflict = Booking.objects.filter(
         user=user,
         date=date,
