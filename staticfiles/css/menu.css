@@ -31,19 +31,19 @@
   justify-content: space-between;
 }
 
-.menu-wrapper .inner-wrapper .menu-items .menu-item #title {
+.menu-wrapper .inner-wrapper .menu-items .menu-item .title {
   text-align: center;
   margin: 10px 0;
 }
 
-.menu-wrapper .inner-wrapper .menu-items .menu-item #price {
+.menu-wrapper .inner-wrapper .menu-items .menu-item .price {
   font-size: 14px;
   text-align: left;
   margin-top: 30px;
   margin-bottom: 5px;
 }
 
-.menu-wrapper .inner-wrapper .menu-items .menu-item #text {
+.menu-wrapper .inner-wrapper .menu-items .menu-item .text {
   padding: 10px;
 }
 
