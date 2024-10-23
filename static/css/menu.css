@@ -47,7 +47,7 @@
   padding: 10px;
 }
 
-.menu-wrapper .inner-wrapper .menu-items .menu-item #menu-image {
+.menu-wrapper .inner-wrapper .menu-items .menu-item .menu-image {
   width: 100%;
   height: 200px;
   object-fit: cover;

@@ -10,14 +10,14 @@
         {% if menu.image %}
         <img
           src="{{ menu.image.url }}"
-          id="menu-image"
+          class="menu-image"
           alt="{{ menu.name }} dish"
         >
         {% endif %}
         <div class="text">
           <h1 class="title">{{menu.name}}</h1>
           <p class="description">{{menu.description}}</p>
-          <p cladd="price">€ {{menu.price}}</p>
+          <p class="price">€ {{menu.price}}</p>
         </div>
       </div>
 
