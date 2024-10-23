@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {%load static%} {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
 {% endblock head %} {% block content %}
 <div class="menu-wrapper">
   <div class="inner-wrapper">
@@ -12,7 +12,7 @@
           src="{{ menu.image.url }}"
           id="menu-image"
           alt="{{ menu.name }} dish"
-        />
+        >
         {% endif %}
         <div id="text">
           <h1 id="title">{{menu.name}}</h1>
