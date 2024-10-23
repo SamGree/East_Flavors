@@ -16,4 +16,3 @@ urlpatterns = [
         views.cancel_booking,
         name='cancel-booking'),
     ]
-
