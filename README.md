@@ -14,29 +14,33 @@
 - Home page
    - The homepage greets users with a visually appealing image of a delicious meal, immediately capturing attention and setting the mood for the dining experience.
    ![chicken on the grill](/readme.images/home.png)
+   ***
    - Logo left corner.
-   ![logo img](/readme.images/logo.png)   
+   ![logo img](/readme.images/logo.png)
+   ***   
    - The top menu provides easy access to essential sections such as Home, Menu,Bookings, Login, and Register, ensuring smooth navigation.
-
   ![navbar](/readme.images/nav.png)
+  ***
 
   - A personalized welcome message (**Welcome to East Flavors!**) makes the experience inviting and establishes a connection with the restaurant's brand.
   ![welcome message](/readme.images/welcome.png)
-
+  ***
    - Prominent buttons like *Explore Menu* and *Book a table* make it convenient for users to view the menu or make a reservation directly from the homepage.
   ![img buttons](/readme.images/tablelogin.png)
-
-
+  ***
+   
    - A gallery of vibrant, high-quality food images offers users a glimpse of the restaurant's dishes, enticing them to explore more or place an order.
    ![img of people and food](/readme.images/foodgallary.png)
-
+   ***
 
    - The **About Us** section effectively communicates the restaurant’s 15-year journey, emphasizing a deep connection to Middle Eastern culinary traditions. It tells a story that appeals to both long-time fans and new visitors.
     The text welcomes everyone, from first-time visitors to regulars, making it clear that the experience is more than just about food—it’s about memorable dining moments.
   ![text](/readme.images/abouttext.png)
+  ***
 
    - The **Find Us** section provides essential contact details and opening hours, ensuring that customers can easily reach the restaurant or plan their visit.
    ![restaurant address](/readme.images/findus.png)
+   ***
 - Footer
    - Social media icons for email, Instagram, and Facebook are visible.
    ![Social media icons](/readme.images/footer.png)
@@ -46,13 +50,14 @@
 - Menu page 
    - Logo left corner. Clicking the logo in the top left corner will take you back to the homepage.
   ![logo img](/readme.images/logo.png) 
+  ***
    - The top menu provides easy access to essential sections such as Home, Login, and Register, ensuring smooth navigation.
   ![menu nav bar](/readme.images/nav.menu.png)
- 
+   ***
    - Available Dishes:
 The page highlights a selection of dishes with images and brief descriptions. This gives users a visual understanding of the food they can order.
   ![images of Dishes](/readme.images/menu.gallery.png)
-
+  ***
 - Footer
    - Social media icons for email, Instagram, and Facebook are visible.
    ![Social media icons](/readme.images/footer.png)
@@ -61,10 +66,10 @@ The page highlights a selection of dishes with images and brief descriptions. Th
 - Register Page
    - Logo left corner. Clicking the logo in the top left corner will take you back to the homepage.
    ![logo img](/readme.images/logo.png)
-
+   ***
    - The top menu provides easy access to essential sections such as Home, Menu and Login, ensuring smooth navigation.
    ![navbar register](/readme.images/register.nav.png)
-   
+   ***
    - User-Friendly Registration Form:
 
    - The form is simple, allowing users to sign up with minimal effort.
@@ -80,7 +85,7 @@ The page highlights a selection of dishes with images and brief descriptions. Th
 
       - If a user already has an account, they can easily switch to the Login page via the link: ***Already a member? Login.*** This reduces friction for returning users, offering a seamless experience. 
       ![form register](/readme.images/register.form.png)
-    
+     ***
    - footer
      -Clickable Links: Social media icons for email, Instagram, and Facebook are visible.
      ![Social media icons](/readme.images/footer.png)
@@ -90,14 +95,16 @@ The page highlights a selection of dishes with images and brief descriptions. Th
 - Login Page
    - Logo left corner. Clicking the logo in the top left corner will take you back to the homepage.
    ![logo img](/readme.images/logo.png)
-
+   ***
    - The top menu provides easy access to essential sections such as Home, Menu,Bookings and Register, ensuring smooth navigation.
    ![navbar img](/readme.images/login.nav.png)
+   ***
    - Simple Layout: Clean, minimalist design with a split layout—restaurant image on one side, login form on the other.
 
    - Login Form: Includes fields for username, password, and a prominent **Login** button for easy access.
    - New User Call to Action: Clear link to register for users without an account, improving user flow.
    ![login form and dinning img](/readme.images/login.form.png)
+   ***
    
    - Footer
      -Clickable Links: Social media icons for email, Instagram, and Facebook are visible.
@@ -109,10 +116,10 @@ The page highlights a selection of dishes with images and brief descriptions. Th
      will take you back to the homepage.
      
      ![logo img](/readme.images/logo.png)
-
+    ***
    - The top menu provides easy access to essential sections such as Home, Menu, Bookings, Logout, and user name come up in the right top corner, ensuring smooth navigation.
    ![navbar and user name](/readme.images/inlog.navbar.png)
-
+  ***
    - Simple Booking Form: Users can easily select a date, time, and number of guests to book a table.
 
    - Availability Info: Clear indication that the restaurant operates between 11 AM and 11 PM.
@@ -121,11 +128,12 @@ The page highlights a selection of dishes with images and brief descriptions. Th
 
    - The restaurant image on the left reinforces the ambiance and brand.
    ![navbar and user name](/readme.images/booking.img.png)
+   ***
 - Your Bookings:
    - Booking Details Display: Shows user’s current booking with details like date, time, and number of guests.
    - Cancel Booking Option: Includes a clear and clickable "Cancel Booking" and "Add booking" also clickable it will take to book a table forrm.
    ![my booking page](/readme.images/add.booking.png)
-
+   ***
      - Footer
      -Clickable Links: Social media icons for email, Instagram, and Facebook are visible.
    ![Social media icons](/readme.images/footer.png)  
@@ -166,7 +174,7 @@ The page highlights a selection of dishes with images and brief descriptions. Th
 ## Models  
   - Bookings Model
   ![list of field, type and description](/readme.images/booking.model.png)
-  
+  ***
 
   - Menu Model
   ![list of field, type and description](/readme.images/menu.model.png)
@@ -207,17 +215,54 @@ The page highlights a selection of dishes with images and brief descriptions. Th
 ## Manual Testing
 - Manual test for home page.
 ![manual text list](/readme.images/manual.test.first.png)
-
+***
 - Manual test for menu page.
 ![manual text list](/readme.images/manual.test.menu.png)
-
+***
 - Manual test for login page.
 ![manual text list](/readme.images/manual.test.login.png)
-
+***
 - Manual test for register page
 ![manual text list](/readme.images/manual.test.register.png)
-
-
-
+-------------------
+-------------------
+## Admin page
+- This is the Django admin dashboard, a built-in feature that allows superusers to manage and interact with models and data from the web interface.
+   - Site Administration Panel:
+       - This panel gives access to different sections of your Django application.
+   - Sections and Models:
+       - ACCOUNTS:
+         - Email addresses: Manage email addresses associated with user accounts.
+      - AUTHENTICATION AND AUTHORIZATION:
+        - Groups: Manage user groups and permissions.
+        - Users: Add, view, edit, or delete users in the application.   
+      - BOOKING:
+         - Bookings: Manage bookings made on the website.
+         - Tables: Handle table-related information (likely referring to tables in a restaurant setting).   
+      - DJANGO SUMMERNOTE:
+         - Attachments: Manage file attachments using the Django Summernote package.
+      - MENU:
+         - Manage restaurant menu items and can easily add it here.
+      - SITES: Manage configurations related to the **sites** framework, often used for multi-site setups.
+      - Recent Actions Panel:
+         - On the right side, it displays a list of recent actions performed by the logged-in admin user, such as adding, changing, or deleting objects.(in this case, menu items).
+      - Header:
+        - The header includes links for the admin user to view the site, change the password, and log out. It also displays the current logged-in user's username ("ADMIN").
+      ![admin page](/readme.images/admin.page.png)  
+      ***
+      - This is the **Add menu** form in the Django admin interface. It allows the admin to add a new menu item with the following fields:
+        - **Name:** The name of the menu item.
+        - **Description:** A text area to describe the menu item.
+        - **Price:** The cost of the item.
+        - **Image:** An option to upload an image for the menu item.
+        - At the bottom, there are buttons to save the entry, save and add another item, or save and continue editing the current item.
+      ![admin page](/readme.images/add.menu.png)
+      ***
+        - This is the Django admin interface's "Select booking to change" page. It shows a list of bookings currently stored in the system.
+        - You can see a list of bookings, including the details for each booking, such as the customer, date, time, and the number of guests.
+Each booking has a checkbox on the left, which allows you to select one or multiple bookings for bulk actions (such as deletion).
+        - The "ADD BOOKING" button in the top right corner allows you to create a new booking.
+        ![booking admin page](/readme.images/booking.admin.png)
+        ***
 
    
