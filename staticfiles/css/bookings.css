@@ -61,6 +61,7 @@
   .bookings-wrapper .bookings {
     width: 80%;
   }
+
   .bookings-wrapper .bookings .booking {
     flex-direction: column;
     gap: 10px;

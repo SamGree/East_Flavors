@@ -3,25 +3,41 @@
 <html lang="en">
   <head>
     <title>East flavors</title>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the rich and vibrant flavors of Middle Eastern cuisine at East Flavors Restaurant, offering a luxurious dining experience.">
-    <meta name="keywords" content="Middle Eastern Cuisine, East Flavors Restaurant, Restaurant Booking, Authentic Dining">
+    <meta
+      name="description"
+      content="Explore the rich and vibrant flavors of Middle Eastern cuisine at East Flavors Restaurant, offering a luxurious dining experience."
+    >
+    <meta
+      name="keywords"
+      content="Middle Eastern Cuisine, East Flavors Restaurant, Restaurant Booking, Authentic Dining"
+    >
     <meta name="author" content="East Flavors Restaurant">
     <!-- Add Font Awesome CDN for icons -->
-     
-    <link rel="stylesheet"
+
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}">
+      crossorigin="anonymous"
+    >
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    >
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/global.css' %}"
+    >
     {% block head %} {% endblock head %}
   </head>
   <body>
     <nav class="navbar">
       <a href="{% url 'home' %}">
         <div class="logo">
-          <img src="{% static 'img/logo2.jpg' %}" alt="EastSt. Logo">
+          <img src="{% static 'img/logo2.jpg' %}" alt="Logo for restaurant">
         </div>
       </a>
 
@@ -38,7 +54,8 @@
       </ul>
       <p id="user-greeting-nav">
         {% if request.user.is_authenticated %} Welcome
-        <span id="highlight-username"> {{request.user.username | title}}</span> {%endif%}
+        <span id="highlight-username"> {{request.user.username | title}}</span>
+        {%endif%}
       </p>
       <!-- Hamburger Icon -->
       <div class="hamburger" id="hamburger">
@@ -60,7 +77,7 @@
         <div class="address">
           <h2>Address</h2>
           <p>Gjutformsgatan 6,721 33 Västerås</p>
-      </div>
+        </div>
         <div class="social-icons">
           <!-- Font Awesome icons -->
           <a href="mailto:info@example.com" target="_blank">

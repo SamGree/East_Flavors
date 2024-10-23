@@ -4,13 +4,15 @@
 <div class="login-wrapper">
   <div class="image">
     <h1>Best meals in town!</h1>
-    <img src="{% static 'img/book.jpg' %}" id="restaurant-image">
+    <img src="{% static 'img/book.jpg' %}" id="restaurant-image" alt="Restaurant dining area">
   </div>
   <div class="inner-wrapper">
     <h2 id="headline">Login</h2>
     <form method="post" class="login-form">
       {% csrf_token %} {{ form.as_p }}
-      <p id="register-link">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+      <p id="register-link">
+        Don't have an account? <a href="{% url 'register' %}">Register</a>
+      </p>
       <button type="submit" class="login-button">Login</button>
     </form>
   </div>

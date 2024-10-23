@@ -1,22 +1,25 @@
-{% extends 'base.html' %}
-{%load static%}
-{% block head %}
+{% extends 'base.html' %} {%load static%} {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
-{% endblock %}
-{% block content %}
+{% endblock %} {% block content %}
 <div class="home-wrapper">
   <div class="hero">
     {% if request.user.is_authenticated %}
-    <h2 id="headline">Welcome to <span id="highlight-username"> East Flavors</span>!</h2>
+    <h2 id="headline">
+      Welcome to <span id="highlight-username"> East Flavors</span>!
+    </h2>
     <div class="action-btns">
       <a href="{% url 'menu' %}" class="button-link"> Explore Menu </a>
       <a href="{% url 'book-table' %}" class="button-link"> Book a table </a>
     </div>
     {%else%}
-    <h2 id="headline">Welcome to <span id="highlight-username"> East Flavors</span>!</h2>
+    <h2 id="headline">
+      Welcome to <span id="highlight-username"> East Flavors</span>!
+    </h2>
     <div class="action-btns">
       <a href="{% url 'menu' %}" class="button-link"> Explore Menu </a>
-      <a href="{% url 'login' %}" class="button-link"> Login and book a table </a>
+      <a href="{% url 'login' %}" class="button-link">
+        Login and book a table
+      </a>
     </div>
     {%endif%}
   </div>
@@ -24,44 +27,45 @@
     <h1>Find your best food</h1>
     <div class="menu-wrapper">
       <div class="menu-item">
-        <img src="{% static 'img/front1.webp' %}" alt="menu-item">
+        <img src="{% static 'img/front1.webp' %}" alt="img of mix food" />
       </div>
       <div class="menu-item">
-        <img src="{% static 'img/front2.webp' %}" alt="menu-item">
+        <img src="{% static 'img/front2.webp' %}" alt="table of foods and drinks" />
       </div>
       <div class="menu-item">
-        <img src="{% static 'img/front3.webp' %}" alt="menu-item">
+        <img src="{% static 'img/front3.webp' %}" alt="eating hummus with bread" />
       </div>
 
       <div class="menu-item">
-        <img src="{% static 'img/front44.webp' %}" alt="menu-item">
+        <img src="{% static 'img/front44.webp' %}" alt="bread salad sandwiches" />
       </div>
       <div class="menu-item">
-        <img src="{% static 'img/sallad1.webp' %}" alt="menu-item">
+        <img src="{% static 'img/sallad1.webp' %}" alt="plate of salad" />
       </div>
       <div class="menu-item">
-        <img src="{% static 'img/front6.webp' %}" alt="menu-item">
+        <img src="{% static 'img/front6.webp' %}" alt="3 guys eating on the table" />
+      </div>
     </div>
+    <a href="{% url 'menu' %}" class="button-link"> Explore Menu </a>
   </div>
-  <a href="{% url 'menu' %}" class="button-link"> Explore Menu </a>
-</div>
   <div class="about">
     <h1>About Us</h1>
     <div class="about-text">
-      <img src="{% static 'img/about11.jpg' %}" alt="menu-item">
+      <img src="{% static 'img/about11.jpg' %}" alt="restaurant employee" />
       <p>
-        Welcome to East Flavors, where tradition meets taste! For over 15 years, we’ve been bringing the rich and
-        vibrant flavors of the Middle East to our community, offering a menu filled with authentic dishes crafted from
-        the finest ingredients.
-
-        From savory kebabs and fragrant rice to our freshly baked flatbreads and signature hummus, every meal at East
-        Flavors tells a story of family recipes, age-old cooking techniques, and a love for sharing the taste of home.
-
-        Whether you're a long-time fan of Middle Eastern cuisine or experiencing it for the first time, we invite you to
-        savor the flavors that have made us a local favorite for more than a decade. At East Flavors, it’s not just
-        about food—it’s about creating unforgettable dining experiences.
-
-        Join us for a meal and discover why we’ve been proudly serving the heart of the Middle East on every plate!
+        Welcome to East Flavors, where tradition meets taste! For over 15 years,
+        we’ve been bringing the rich and vibrant flavors of the Middle East to
+        our community, offering a menu filled with authentic dishes crafted from
+        the finest ingredients. From savory kebabs and fragrant rice to our
+        freshly baked flatbreads and signature hummus, every meal at East
+        Flavors tells a story of family recipes, age-old cooking techniques, and
+        a love for sharing the taste of home. Whether you're a long-time fan of
+        Middle Eastern cuisine or experiencing it for the first time, we invite
+        you to savor the flavors that have made us a local favorite for more
+        than a decade. At East Flavors, it’s not just about food—it’s about
+        creating unforgettable dining experiences. Join us for a meal and
+        discover why we’ve been proudly serving the heart of the Middle East on
+        every plate!
       </p>
     </div>
   </div>
@@ -73,7 +77,7 @@
         <div>
           <p>Phone</p>
           <p>021142588</p>
-          <p>Opening hours: 11:00  to 23:00 Everyday</p>
+          <p>Opening hours: 11:00 to 23:00 Everyday</p>
         </div>
         <div>
           <p>Email</p>
@@ -85,7 +89,7 @@
         </div>
       </div>
       <!-- MAP -->
-      <img src="{% static 'img/findus11.jpg' %}" alt="menu-item">
+      <img src="{% static 'img/findus11.jpg' %}" alt="restaurant outside image" />
     </div>
   </div>
 </div>

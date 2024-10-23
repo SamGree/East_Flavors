@@ -97,6 +97,7 @@
 .about-text img {
   width: 50%;
 }
+
 .contact {
   display: flex;
   flex-direction: column;
@@ -128,7 +129,7 @@
     align-items: flex-start;
     width: 100%;
   }
-  
+
   .about-text img {
     width: 100% !important;
   }

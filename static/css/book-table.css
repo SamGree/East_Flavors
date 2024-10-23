@@ -58,7 +58,7 @@
   width: 80%;
 }
 
-.book-table-wrapper .inner-wrapper .book-table-form > p {
+.book-table-wrapper .inner-wrapper .book-table-form>p {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

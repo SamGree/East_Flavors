@@ -58,7 +58,7 @@
   width: 80%;
 }
 
-.login-wrapper .inner-wrapper .login-form > p {
+.login-wrapper .inner-wrapper .login-form>p {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -78,6 +78,7 @@
 .login-wrapper .inner-wrapper .login-form #register-link a {
   text-decoration: underline;
 }
+
 .login-wrapper .inner-wrapper .login-form .login-button {
   background-color: var(--color-blue-100);
   padding: 10px;
