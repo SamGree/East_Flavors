@@ -2,7 +2,7 @@
 ![chicken on the grill](/readme.images/ami.png)
 - Direct link to the website:
 [East flavors](https://east-flavors-6a20eeb5fe30.herokuapp.com/)
-- link to the github: [Github link](https://github.com/SamGree/East_Flavors)
+- Link to the github: [Github link](https://github.com/SamGree/East_Flavors)
 
 ## Goals
    - Create an operational website for a restaurant.
@@ -214,6 +214,13 @@ Each booking has a checkbox on the left, which allows you to select one or multi
         
 -----------------------
 -----------------------
+## Wireframe
+- Mobile wireframe
+![home page](/readme.images/mobile.home.page.png)![home page](/readme.images/mobile.home.navbar.png)![home page](/readme.images/menu.mobile.png)![home page](/readme.images/login.mobile.png)![home page](/readme.images/register.mobile.png)![home page](/readme.images/booktable.mobile.png)![home page](/readme.images/mobile.mybooking.png)
+
+
+----------------------
+----------------------
 ## Models  
   - Bookings Model
   ![list of field, type and description](/readme.images/booking.model.png)
@@ -352,5 +359,12 @@ Each booking has a checkbox on the left, which allows you to select one or multi
     - Issue: One of my tests failed because the __str__ method in my Menu model was returning the wrong string ("Menu object (1)" instead of "Spaghetti").
     - Cause: The __str__ method was incorrectly defined outside the class.
     - Fix: Moved the __str__ method inside the Menu class so it correctly returns the name of the menu item.
+ - User Could Book a Table in the Past:
+    - Issue: Initially, users were able to book tables for times in the past, which was not allowed and created incorrect data in the booking system.   
+    - Fix: A solution was implemented to prevent users from booking tables in the past by handling timezones and validating booking times:
+      - Installed the pytz library for timezone handling.
+      - utils.py: Updated to check if the booking time is in the future based on the user's timezone.
+      - views.py: Modified to receive the user's timezone from the frontend and validate the booking time.
+      - main.js: Added JavaScript to capture the user's timezone.
 - unsolved bugs:
   - none.              

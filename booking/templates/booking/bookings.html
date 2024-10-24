@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/bookings.css' %}">
 {% endblock head %} {% block content %}
 <div class="bookings-wrapper">
-  <h1 id="heading">MY Bookings</h1>
+  <h1 id="heading">My bookings</h1>
   <div class="bookings">
     {% for booking in bookings %}
     <div class="booking" data-bookingId="{{booking.id}}">
@@ -12,8 +12,8 @@
 
       <!-- I added a styled anchor tag for the Add Booking link -->
       <div class="booking-buttons">
-        <a href="{% url 'book-table' %}" class="add-booking">Add Booking</a>
-        <button class="cancel-booking">Cancel Booking</button>
+        <a href="{% url 'book-table' %}" class="add-booking">Add booking</a>
+        <button class="cancel-booking">Cancel booking</button>
       </div>
     </div>
     {% endfor %}
