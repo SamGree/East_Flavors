@@ -214,8 +214,10 @@ Each booking has a checkbox on the left, which allows you to select one or multi
         
 -----------------------
 -----------------------
-## Wireframe
-- Mobile wireframe
+## Wireframe.
+ - Mobile wireframe: 
+ - Same wireframe applies to the tablet.
+ 
 ![home page](/readme.images/mobile.home.page.png)![home page](/readme.images/mobile.home.navbar.png)![home page](/readme.images/menu.mobile.png)![home page](/readme.images/login.mobile.png)![home page](/readme.images/register.mobile.png)![home page](/readme.images/booktable.mobile.png)![home page](/readme.images/mobile.mybooking.png)
 
 
