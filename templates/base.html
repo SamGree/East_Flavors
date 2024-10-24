@@ -46,10 +46,10 @@
         <li><a href="{% url 'menu' %}">MENU</a></li>
         {% if request.user.is_authenticated %}
         <li><a href="{% url 'user-bookings' %}">BOOKINGS</a></li>
-        <li><a href="{% url 'logout' %}">Logout</a></li>
+        <li><a href="{% url 'logout' %}">LOGOUT</a></li>
         {% else %}
-        <li><a href="{% url 'login' %}">Login</a></li>
-        <li><a href="{% url 'register' %}">Register</a></li>
+        <li><a href="{% url 'login' %}">LOGIN</a></li>
+        <li><a href="{% url 'register' %}">REGISTER</a></li>
         {% endif %}
       </ul>
       <p id="user-greeting-nav">

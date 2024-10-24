@@ -317,7 +317,8 @@ Each booking has a checkbox on the left, which allows you to select one or multi
   - Css validate. All css files it passed.
   ![css validate](/readme.images/css.valid.png)
   ***
-  - jshint.
+  - Jshint.
+  - link for js code test: [jshint](https://jshint.com/)
     - Bookings js.
       - Metrics.
        - There are 2 functions in this file.
@@ -332,7 +333,7 @@ Each booking has a checkbox on the left, which allows you to select one or multi
       - The most complex function has a cyclomatic complexity value of 2 while the median is 1.
       ***
     - Pep8 
-      - [Link for test python code](https://pep8ci.herokuapp.com/ )   
+      - Link for:  [test python code](https://pep8ci.herokuapp.com/ )   
       - All Python code has been thoroughly tested, and the results show **no errors were found.** Here are a few examples.
       ![python test](/readme.images/python.test.png)
       ![python test](/readme.images/python.test1.png)
