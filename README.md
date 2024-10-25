@@ -1,13 +1,14 @@
-# Table of Contents
+# East flavors
 ![chicken on the grill](/readme.images/ami.png)
 - Direct link to the website:
 [East flavors](https://east-flavors-6a20eeb5fe30.herokuapp.com/)
 - Link to the github: [Github link](https://github.com/SamGree/East_Flavors)
 
+# Table of Contents
 ## Goals
    - Create an operational website for a restaurant.
    - Enable users to reserve a table for their preferred date and time through an easy-to-use form.
-   - It should also provide users with the ability to easily book more tables (**but should not choose same hour with same date, but 1 hour apart ok**) or cancel their reservations.
+   - It should also provide users with the ability to easily book more tables (**but should not choose same hour with same date, but 1 hour apart**) add or cancel their reservations.
    - Display the restaurant's menu to the user.
    - Enable users to register an account.
 -------------------
@@ -176,10 +177,10 @@ The page highlights a selection of dishes with images and brief descriptions. Th
 -----------------------
 ## Admin page
 - This is the Django admin dashboard, a built-in feature that allows superusers to manage and interact with models and data from the web interface.
-   - Site Administration Panel:
+   - Site administration panel:
        - This panel gives access to different sections of your Django application.
    - Sections and Models:
-       - ACCOUNTS:
+      - ACCOUNTS:
          - Email addresses: Manage email addresses associated with user accounts.
       - AUTHENTICATION AND AUTHORIZATION:
         - Groups: Manage user groups and permissions.
@@ -188,14 +189,14 @@ The page highlights a selection of dishes with images and brief descriptions. Th
          - Bookings: Manage bookings made on the website.
          - Tables: Handle table-related information (likely referring to tables in a restaurant setting).   
       - DJANGO SUMMERNOTE:
-         - Attachments: Manage file attachments using the Django Summernote package.
+         - Attachments: Manage file attachments using the Django summernote package.
       - MENU:
          - Manage restaurant menu items and can easily add it here.
       - SITES: Manage configurations related to the **sites** framework, often used for multi-site setups.
       - Recent Actions Panel:
          - On the right side, it displays a list of recent actions performed by the logged-in admin user, such as adding, changing, or deleting objects.(in this case, menu items).
       - Header:
-        - The header includes links for the admin user to view the site, change the password, and log out. It also displays the current logged-in user's username ("ADMIN").
+        - The header includes links for the admin to view the site, change the password, and log out.
       ![admin page](/readme.images/admin.page.png)  
       ***
       - This is the **Add menu** form in the Django admin interface. It allows the admin to add a new menu item with the following fields:
@@ -207,10 +208,15 @@ The page highlights a selection of dishes with images and brief descriptions. Th
       ![admin page](/readme.images/add.menu.png)
       ***
         - This is the Django admin interface's "Select booking to change" page. It shows a list of bookings currently stored in the system.
-        - You can see a list of bookings, including the details for each booking, such as the customer, date, time, and the number of guests.
-Each booking has a checkbox on the left, which allows you to select one or multiple bookings for bulk actions (such as deletion).
-        - The "ADD BOOKING" button in the top right corner allows you to create a new booking.
         ![booking admin page](/readme.images/booking.admin.png)
+        ***
+        - Admin interface for **Table** management:
+        This admin panel allows the site owner to manage the restaurant's table capacities easily. Through this interface, the owner can create and configure tables by specifying their seating capacity.
+        ![admin page for add table](/readme.images/admin.add.table.png)
+        ***
+        - Current tables overview in admin panel:
+        This section of the admin panel displays the current list of tables available in the restaurant, ordered by their seating capacity. Each table shows its capacity, allowing the site owner to easily manage and modify the table arrangement. The list contains tables with capacities ranging from 2 to 20 seats, giving flexibility to accommodate different group sizes.
+        ![admin current table](/readme.images/admin.current.table.png)
         
 -----------------------
 -----------------------
@@ -227,17 +233,13 @@ Each booking has a checkbox on the left, which allows you to select one or multi
 ----------------------
 ----------------------
 ## Models  
- - User to Booking (Many-to-One relationship):
-   - User field in the Booking model is a foreign key to the User model. User can have many bookings, but each booking belongs to one user, which represents a many-to-one relationship. 
+ - User to booking (Many-to-One relationship):
+   - User field in the booking model is a foreign key to the User model. User can have many bookings, but each booking belongs to one user, which represents a many-to-one relationship. 
        - user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='bookings')
 - Table to Booking (Many-to-One relationship):
-   - Table field in the Booking model is a foreign key to the table model, also representing a many-to-one relationship.It is mean table can be booked by multiple bookings, but each booking is assigned to one table.
+   - Table field in the booking model is a foreign key to the table model, also representing a many-to-one relationship.It is mean table can be booked by multiple bookings, but each booking is assigned to one table.
        - table = models.ForeignKey(Table, on_delete=models.CASCADE, related_name='bookings') 
-
-
-
-
 ***
   - Bookings Model
   ![list of field, type and description](/readme.images/booking.model.png)
@@ -313,7 +315,7 @@ Each booking has a checkbox on the left, which allows you to select one or multi
 ![manual text list](/readme.images/manual.test.first.png)
 ***
 - Manual test for menu page.
-![manual text list](/readme.images/manual.test.menu.png)
+![manual text list](/readme.images/manual.test.menu1.png)
 ***
 - Manual test for login page.
 ![manual text list](/readme.images/manual.test.login.png)
@@ -362,21 +364,17 @@ Each booking has a checkbox on the left, which allows you to select one or multi
  -  Duplicate ID Errors: 
     - Issue: I received multiple errors for duplicate id attributes in HTML elements (e.g., menu-image, text, title, etc.).
     - Cause: IDs in HTML must be unique within a page. Having duplicate IDs can cause conflicts, especially with JavaScript and styling.
-    - Fix: Updated elements to use unique IDs or used class attributes instead of id where applicable. 
+    - Fix: Updated elements to use unique IDs or used class attributes instead of id. 
  - Image Accessibility Issues:
     - Issue: Some images were missing alt attributes, leading to warnings about accessibility.
-    - Fix: Added descriptive alt attributes to all images to ensure better accessibility and SEO.
- - Time Validation for Booking:
-    - Issue: When users tried to book a table before the restaurant's opening hours (e.g., 9:00 AM), they received a validation error.
-    - Cause: The restaurant operates between 11:00 AM and 11:00 PM, and the booking form wasn't validating the time range correctly.
-    - Fix: Implemented proper time validation to ensure users can only select a time within operating hours.
+    - Fix: Added descriptive alt attributes to all images to ensure better accessibility.
  - CSS Validator Errors:
     - Issue: CSS validation produced errors due to incorrect usage of certain properties, like justify-content: baseline.
     - Fix: Updated CSS to use the correct properties (e.g., justify-content: center).
  - Test Failures Due to Incorrect String Representation:
-    - Issue: One of my tests failed because the __str__ method in my Menu model was returning the wrong string ("Menu object (1)" instead of "Spaghetti").
-    - Cause: The __str__ method was incorrectly defined outside the class.
-    - Fix: Moved the __str__ method inside the Menu class so it correctly returns the name of the menu item.
+    - Issue: One of my tests failed because the __ str__ method in my Menu model was returning the wrong string ("Menu object (1)" instead of "Spaghetti").
+    - Cause: The __ str__ method was incorrectly defined outside the class.
+    - Fix: Moved the __ str__ method inside the Menu class so it correctly returns the name of the menu item.
  - User Could Book a Table in the Past:
     - Issue: Initially, users were able to book tables for times in the past, which was not allowed and created incorrect data in the booking system.   
     - Fix: A solution was implemented to prevent users from booking tables in the past by handling timezones and validating booking times:
@@ -385,4 +383,16 @@ Each booking has a checkbox on the left, which allows you to select one or multi
       - views.py: Modified to receive the user's timezone from the frontend and validate the booking time.
       - main.js: Added JavaScript to capture the user's timezone.
 - unsolved bugs:
-  - none.              
+  - none. 
+----------------------
+----------------------
+## Credits
+- I want to thank my mentor, **Luke Buchanan**, for his invaluable support and guidance during this project, and Tutor Assistance.
+- Meals images
+   - <https://www.munchery.com/blog/old-meets-new-the-roots-and-current-trends-of-middle-eastern-cooking/>
+   - <https://amazingfoodanddrink.com/middle-eastern-foods/> 
+   - <https://en.wikipedia.org/wiki/Dolma>     
+   - <https://unsplash.com/s/photos/forest> 
+
+- Notice
+  - At the start of the project, I interpreted the Portfolio 4 Assessment Guide's instruction to 'Avoid double bookings' as preventing users from booking two tables at the same time and date. (That was my understanding). Therefore, the booking system will not allow users to book two tables at the same time and same day unless they are one hour apart. However, upon reviewing the guide again before submitting the project, I realized that 'Avoid double bookings' actually refers to preventing double bookings of the same table, not a user.  
