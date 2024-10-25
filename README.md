@@ -219,11 +219,26 @@ Each booking has a checkbox on the left, which allows you to select one or multi
  - Same wireframe applies to the tablet.
  
 ![home page](/readme.images/mobile.home.page.png)![home page](/readme.images/mobile.home.navbar.png)![home page](/readme.images/menu.mobile.png)![home page](/readme.images/login.mobile.png)![home page](/readme.images/register.mobile.png)![home page](/readme.images/booktable.mobile.png)![home page](/readme.images/mobile.mybooking.png)
-
-
+***
+- Desktop and laptop wireframe:
+![wireframe for laptop](/readme.images/wire.laptop.home.png)
+![wireframe for laptop](/readme.images/wire.laptop.menu.png)
+![wireframe for laptop](/readme.images/wire.laptop.register.png)![wireframe for laptop](/readme.images/wire.laptop.login.png)![wireframe for laptop](/readme.images/wire.laptop.book.table.png)![wireframe for laptop](/readme.images/wire.laptop.mybooking.png)
 ----------------------
 ----------------------
 ## Models  
+ - User to Booking (Many-to-One relationship):
+   - User field in the Booking model is a foreign key to the User model. User can have many bookings, but each booking belongs to one user, which represents a many-to-one relationship. 
+       - user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='bookings')
+- Table to Booking (Many-to-One relationship):
+   - Table field in the Booking model is a foreign key to the table model, also representing a many-to-one relationship.It is mean table can be booked by multiple bookings, but each booking is assigned to one table.
+       - table = models.ForeignKey(Table, on_delete=models.CASCADE, related_name='bookings') 
+
+
+
+
+***
   - Bookings Model
   ![list of field, type and description](/readme.images/booking.model.png)
   ***
