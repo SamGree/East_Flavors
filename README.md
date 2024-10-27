@@ -31,9 +31,9 @@
 - Typography.
   - The typography for the East Flavors website is chosen to enhance readability, create a professional look, and align with the brand's modern and elegant feel. It is designed to ensure that the content is clear and accessible to all users while maintaining a cohesive visual identity.
 - Design Process.
-  - The design process for the East Flavors website was an iterative journey focused on creating a user-friendly, visually appealing, and functional restaurant website. As the sole designer, I managed all aspects of the design, from conceptualization to the final product, ensuring consistency and alignment with the restaurant’s brand.    
+  - The design process for the East Flavors website was an iterative journey focused on creating a user friendly, visually appealing, and functional restaurant website. I managed all aspects of the design, from conceptualization to the final product, ensuring consistency and alignment with the restaurant’s brand.    
   - Research & Inspiration:
-    - I began by researching modern restaurant websites, focusing on usability, aesthetics, and how food imagery can influence user engagement. Inspiration was drawn from both local and international restaurant brands to identify best practices in web design, user interface, and user experience.
+    - I began by researching modern restaurant websites, focusing on usability, aesthetics, and how food imagery can influence user engagement. 
   - Branding & Visual Identity:
     - Establishing a strong visual identity for East Flavors was a priority. I worked on creating a logo that reflects the restaurant’s Middle Eastern heritage with a modern twist. The color palette, fonts, and imagery were chosen to reflect warmth, authenticity, and a high-quality dining experience.
   - Responsive Design:
@@ -156,18 +156,21 @@ The page highlights a selection of dishes with images and brief descriptions. Th
    - The top menu provides easy access to essential sections such as Home, Menu, Bookings, Logout, and user name come up in the right top corner, ensuring smooth navigation.
    ![navbar and user name](/readme.images/inlog.navbar.png)
   ***
+   -
    - Simple Booking Form: Users can easily select a date, time, and number of guests to book a table.
 
    - Availability Info: Clear indication that the restaurant operates between 11 AM and 11 PM.
 
    - Confirmation Button: A prominent “Book Now” button to finalize reservations quickly.
 
-   - The restaurant image on the left reinforces the ambiance and brand.
+   - The restaurant image on the left.
    ![navbar and user name](/readme.images/booking.img.png)
    ***
 - Your Bookings:
    - Booking Details Display: Shows user’s current booking with details like date, time, and number of guests.
-   - Cancel Booking Option: Includes a clear and clickable "Cancel Booking" and "Add booking" also clickable it will take to book a table forrm.
+   - Cancel Booking Option: Includes a clear and clickable "Add Booking" and "Cancel booking".
+       - Click on add booking it will take you to book a table form.
+       - Click on cancel booking will delete reservation.
    ![my booking page](/readme.images/add.booking.png)
    ***
      - Footer
@@ -295,12 +298,11 @@ The page highlights a selection of dishes with images and brief descriptions. Th
            2. Add environment variables.
         6. Go to the deploy tab, and Select github.   
         7. Confirm what I want to connect to github.
-        8. Now we can search for github repository name. and Scroll down to Manual Deploy and select deploy branch finally click connect.
+        8. Now we can search for github repository name. and Scroll down to Manual Deploy and select deploy branch.
   - Packages Used:
       - Development Tools:
         - Gitpod: IDE used for coding and file transfer between editor and repository.
         - GitHub: Version control and repository hosting.
-        - Wireframe models for site design.
         - Balsamiq: Wireframe models for site design.
         - Global css: Styling the text throughout the site.
   - Django Documentation: 
@@ -330,10 +332,10 @@ The page highlights a selection of dishes with images and brief descriptions. Th
 -------------------
 -------------------
 ## Validator testing.
-  - All pages I gone throw the URI test and passed
+  - All pages are went through the URI test and passed
   ![html test](/readme.images/html.valid.png)
   ***
-  - Css validate. All css files it passed.
+  - Css validate. All CSS files went through a validater test, result; no error found.
   ![css validate](/readme.images/css.valid.png)
   ***
   - Jshint.
