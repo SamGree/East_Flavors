@@ -5,6 +5,16 @@
 - Link to the github: [Github link](https://github.com/SamGree/East_Flavors)
 
 # Table of Contents
+- [Design Philosophy](#design-philosophy)
+- [Key Features](#key-features)
+- [Admin page](#admin-page)
+- [Wireframe](#wireframe)
+- [Models](#models)
+- [Technologies Used](#technologies-used)
+- [Manual testing](#manual-testing)'
+- [Validator testing](#validator-testing)
+- [Bugs](#bugs)
+- [Credits](#credits)
 ## Goals
    - Create an operational website for a restaurant.
    - Enable users to reserve a table for their preferred date and time through an easy-to-use form.
