@@ -11,6 +11,7 @@
    - It should also provide users with the ability to easily book more tables (**but should not choose same hour with same date, but 1 hour apart**) add or cancel their reservations.
    - Display the restaurant's menu to the user.
    - Enable users to register an account.
+   - East Flavors restaurant is co-owned by two partners who oversee daily operations. They manage a staff organized into two teams, ensuring the restaurant is open every day.
 -------------------
 -------------------
 ## Design Philosophy
@@ -360,6 +361,11 @@ The page highlights a selection of dishes with images and brief descriptions. Th
       ![python test](/readme.images/python.test1.png)
       ![python test](/readme.images/python.test2.png)
       ![python test](/readme.images/python.test3.png)
+    - Lighthouse
+      - Lighthouse .This test is been done on my laptop.  
+      ![light house](/readme.images/light.house.png)
+      - This is result lighthouse when my mentor test it on his computer.
+      ![light house](/readme.images/light.house.mentor.png)
 ---------------
 --------------- 
 ## Bugs.
