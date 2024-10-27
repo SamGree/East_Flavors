@@ -364,7 +364,7 @@ The page highlights a selection of dishes with images and brief descriptions. Th
     - Lighthouse
       - Lighthouse .This test is been done on my laptop.  
       ![light house](/readme.images/light.house.png)
-      - This is result lighthouse when my mentor test it on his computer.
+      - This is result lighthouse when my mentor test it on his laptop.
       ![light house](/readme.images/light.house.mentor.png)
 ---------------
 --------------- 
