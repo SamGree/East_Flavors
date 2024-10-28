@@ -2,14 +2,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.http import JsonResponse
 
 from .forms import UserRegistrationForm, CustomLoginForm, BookingForm
 from .models import Table, Booking
 from .utils import find_available_table
-import zoneinfo
 from django.utils import timezone
 
 
@@ -74,7 +72,7 @@ def book_table(request):
             time = form.cleaned_data['time']
             guests = form.cleaned_data['guests']
 
-            tzname = request.COOKIES.get("django_timezone")
+            tzname = request.COOKIES.get("django_timezone", "UTC")
 
             # Find available table for the given date,time and number of guests
             table = find_available_table(

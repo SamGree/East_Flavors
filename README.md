@@ -336,9 +336,16 @@ The page highlights a selection of dishes with images and brief descriptions. Th
 - Manual test for register page
 ![manual text list](/readme.images/manual.test.register.png)
 ***
-- Automated Testing.
-  - Menu.
+- Automated Testing
+  - Testing Menu app.
+    - Testing is essential to ensure that our application’s features and components work as expected. This suite of tests focuses on verifying the functionality of the Menu model and related views in the application. These tests ensure that:
+      - The data models behave correctly when creating and accessing menu items.
+      - The views render the appropriate templates, load content correctly, and display expected data to users.
 ![auto test](/readme.images/auto.test.png)
+***
+  - Testing Booking App.
+  ![booking app test](/readme.images/auto.test.booking21.png)
+    - The purpose of testing the booking app is to ensure the core functionalities work as expected and that users have a smooth experience without encountering errors. Each test case targets a specific function, verifying that the app behaves correctly under different scenarios. 
 
 -------------------
 -------------------
