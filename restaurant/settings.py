@@ -117,6 +117,7 @@ if 'test' in sys.argv:  # Check if we're running tests
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
+    'https://8000-samgree-eastflavors-45ndkqs7v56.ws.codeinstitute-ide.net',
     "https://*.herokuapp.com"
 ]
 
@@ -170,6 +171,6 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CSRF_TRUSTED_ORIGINS = [
-    'https://8000-samgree-eastflavors-45ndkqs7v56.ws.codeinstitute-ide.net',
-]
+# CSRF_TRUSTED_ORIGINS = [
+#    'https://8000-samgree-eastflavors-45ndkqs7v56.ws.codeinstitute-ide.net',
+# ]

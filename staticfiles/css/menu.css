@@ -28,7 +28,7 @@
   background-color: var(--color-grey-900);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .menu-wrapper .inner-wrapper .menu-items .menu-item .title {
