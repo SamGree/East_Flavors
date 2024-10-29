@@ -336,7 +336,7 @@ The page highlights a selection of dishes with images and brief descriptions. Th
 - Manual test for register page
 ![manual text list](/readme.images/manual.test.register.png)
 ***
-- Automated Testing
+- Automatic Testing
   - Testing Menu app.
     - Testing is essential to ensure that our application’s features and components work as expected. This suite of tests focuses on verifying the functionality of the Menu model and related views in the application. These tests ensure that:
       - The data models behave correctly when creating and accessing menu items.
