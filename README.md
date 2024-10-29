@@ -1,5 +1,5 @@
 # East flavors
-![chicken on the grill](/readme.images/ami.png)
+![chicken on the grill](/readme.images/ami1.png)
 - Direct link to the website:
 [East flavors](https://east-flavors-6a20eeb5fe30.herokuapp.com/)
 - Link to the github: [Github link](https://github.com/SamGree/East_Flavors)
@@ -60,13 +60,13 @@
 
 - Home page
    - The homepage greets users with a visually appealing image of a delicious meal, immediately capturing attention and setting the mood for the dining experience.
-   ![chicken on the grill](/readme.images/home.png)
+   ![chicken on the grill](/readme.images/home1.png)
    ***
    - Logo left corner.
    ![logo img](/readme.images/logo.png)
    ***   
    - The top menu provides easy access to essential sections such as Home, Menu,Bookings, Login, and Register, ensuring smooth navigation. I made it easy for the user to know which page they are currently on by highlighting the corresponding item in the navbar with a red color.
-  ![navbar](/readme.images/nav.png)
+  ![navbar](/readme.images/nav1.png)
   ***
 
   - A personalized welcome message (**Welcome to East Flavors!**) makes the experience inviting and establishes a connection with the restaurant's brand.
@@ -99,7 +99,7 @@
   ![logo img](/readme.images/logo.png) 
   ***
    - The top menu provides easy access to essential sections such as Home, Login, and Register, ensuring smooth navigation.
-  ![menu nav bar](/readme.images/nav.menu.png)
+  ![menu nav bar](/readme.images/nav.menu1.png)
    ***
    - Available Dishes:
 The page highlights a selection of dishes with images and brief descriptions. This gives users a visual understanding of the food they can order.
@@ -115,7 +115,7 @@ The page highlights a selection of dishes with images and brief descriptions. Th
    ![logo img](/readme.images/logo.png)
    ***
    - The top menu provides easy access to essential sections such as Home, Menu and Login, ensuring smooth navigation.
-   ![navbar register](/readme.images/register.nav.png)
+   ![navbar register](/readme.images/register.nav1.png)
    ***
    - User-Friendly Registration Form:
 
@@ -144,7 +144,7 @@ The page highlights a selection of dishes with images and brief descriptions. Th
    ![logo img](/readme.images/logo.png)
    ***
    - The top menu provides easy access to essential sections such as Home, Menu,Bookings and Register, ensuring smooth navigation.
-   ![navbar img](/readme.images/login.nav.png)
+   ![navbar img](/readme.images/login.nav1.png)
    ***
    - Simple Layout: Clean, minimalist design with a split layout—restaurant image on one side, login form on the other.
 
@@ -413,11 +413,11 @@ The page highlights a selection of dishes with images and brief descriptions. Th
 ----------------------
 ## Credits
 - I want to thank my mentor, **Luke Buchanan**, for his invaluable support and guidance during this project, and Tutor Assistance.
-- Meals images
+- Images for the entire project.
    - <https://www.munchery.com/blog/old-meets-new-the-roots-and-current-trends-of-middle-eastern-cooking/>
    - <https://amazingfoodanddrink.com/middle-eastern-foods/> 
    - <https://en.wikipedia.org/wiki/Dolma>     
    - <https://unsplash.com/s/photos/forest> 
-
+   - The address and phone number used in this project are provided with permission from Kurdistan Restaurang <http://kurdistanrestaurang.se/> and are used solely for demonstration purposes.
 - Notice
   - At the start of the project, I interpreted the Portfolio 4 Assessment Guide's instruction to 'Avoid double bookings' as preventing users from booking two tables at the same time and date. (That was my understanding). Therefore, the booking system will not allow users to book two tables at the same time and same day unless they are one hour apart. However, upon reviewing the guide again before submitting the project, I realized that 'Avoid double bookings' actually refers to preventing double bookings of the same table, not a user.  
