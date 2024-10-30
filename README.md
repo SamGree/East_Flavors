@@ -419,5 +419,7 @@ The page highlights a selection of dishes with images and brief descriptions. Th
    - <https://en.wikipedia.org/wiki/Dolma>     
    - <https://unsplash.com/s/photos/forest> 
    - The address and phone number used in this project are provided with permission from Kurdistan Restaurang <http://kurdistanrestaurang.se/> and are used solely for demonstration purposes.
+   - I did look at this site, the layout of the header and footer, which have a slightly similar look and feel.
+   <https://east-street-bc0671035c95.herokuapp.com/>.
 - Notice
   - At the start of the project, I interpreted the Portfolio 4 Assessment Guide's instruction to 'Avoid double bookings' as preventing users from booking two tables at the same time and date. (That was my understanding). Therefore, the booking system will not allow users to book two tables at the same time and same day unless they are one hour apart. However, upon reviewing the guide again before submitting the project, I realized that 'Avoid double bookings' actually refers to preventing double bookings of the same table, not a user.  
