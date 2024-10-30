@@ -22,9 +22,9 @@ class CustomLoginForm(AuthenticationForm):
     Defines the fields: username and password with their respective widgets.
     """
     username = forms.CharField(max_length=150, widget=forms.TextInput(
-        attrs={'placeholder': 'Username', 'autocomplete': 'username'}))
+        attrs={'placeholder': 'Username'}))
     password = forms.CharField(widget=forms.PasswordInput(
-        attrs={'placeholder': 'Password', 'autocomplete': 'current-password'}))
+        attrs={'placeholder': 'Password'}))
 
 
 class BookingForm(forms.ModelForm):
