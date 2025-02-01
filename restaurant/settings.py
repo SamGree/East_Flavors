@@ -28,10 +28,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['8000-samgree-eastflavors-45ndkqs7v56.ws.codeinstitute-ide.net',
-'.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1',
+                 '.herokuapp.com']
 
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL', ''),
@@ -116,10 +116,8 @@ if 'test' in sys.argv:  # Check if we're running tests
     }
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.codeinstitute-ide.net/",
-    'https://8000-samgree-eastflavors-45ndkqs7v56.ws.codeinstitute-ide.net',
-    "https://*.herokuapp.com"
-]
+    "https://localhost","https://*.herokuapp.com"
+    ]
 
 
 # Password validation
