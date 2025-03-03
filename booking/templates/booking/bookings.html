@@ -1,9 +1,12 @@
 {% extends 'base.html' %} {% load static %} {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/bookings.css' %}" >
+<link rel="stylesheet" type="text/css" href="{% static 'css/bookings.css' %}" />
 {% endblock head %} {% block content %}
 <div class="bookings-wrapper">
   <h1 id="heading">My bookings</h1>
   <div class="bookings">
+    <div class="booking-buttons">
+      <a href="{% url 'book-table' %}" class="add-booking">Add booking</a>
+    </div>
     {% for booking in bookings %}
     <div class="booking" data-bookingId="{{booking.id}}">
       <!-- I put span here so booking info is in center because of space-between property  -->
@@ -12,7 +15,6 @@
 
       <!-- I added a styled anchor tag for the Add Booking link -->
       <div class="booking-buttons">
-        <a href="{% url 'book-table' %}" class="add-booking">Add booking</a>
         <button class="cancel-booking">Cancel booking</button>
       </div>
     </div>
