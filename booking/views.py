@@ -9,6 +9,7 @@ from .forms import UserRegistrationForm, CustomLoginForm, BookingForm
 from .models import Table, Booking
 from .utils import find_available_table
 from django.utils import timezone
+from django.contrib import messages
 
 
 def register(request):
@@ -87,6 +88,7 @@ def book_table(request):
                     time=time,
                     guests=guests
                 )
+                messages.success(request, 'Your booking has been successfully completed!')
                 return redirect(reverse('user-bookings'))
             else:
                 # No available table found, show an error message
@@ -124,8 +126,10 @@ def cancel_booking(request, id):
     if booking.exists():
         booking.delete()
         response_data = {'message': "Booking canceled successfully!"}
+        messages.error(request,'Booking canceled successfully')
         return JsonResponse(response_data, status=200)
     else:
+        messages.error(request, 'Booking not found')
         return JsonResponse(
             {
                 'error': "Booking not found"
