@@ -15,6 +15,11 @@
 
       <!-- I added a styled anchor tag for the Add Booking link -->
       <div class="booking-buttons">
+        <a
+          href="{% url 'get-booking' booking.id %}"
+          class="add-booking edit-button"
+          >Edit booking</a
+        >
         <button class="cancel-booking">Cancel booking</button>
       </div>
     </div>

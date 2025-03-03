@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {%load static%} {% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/book-table.css' %}"
+>
+{% endblock head %} {% block content %}
+<div class="book-table-wrapper">
+  <div class="image">
+    <h1>5-star service!</h1>
+    <img
+      src="{% static 'img/book.jpg' %}"
+      id="restaurant-image"
+      alt="Restaurant dining area"
+    >
+  </div>
+  <div class="inner-wrapper">
+    <h2 id="headline">Change Your Booking</h2>
+    <p id="alert">Restaurant works between 11 AM and 11 PM.</p>
+    <form method="post" action="{% url 'update-booking' booking.id %}" class="book-table-form">
+        {% csrf_token %}
+          <ul class="errorlist nonfield">
+              <li>Sorry, no table available for the selected date,time, and guests.</li>
+          </ul>
+          <p>
+              <label for="id_date">Booking Date:</label>
+              <input type="date" name="date" value="{{booking.date|date:'Y-m-d'}}" required id="id_date">
+          </p>
+          <p>
+              <label for="id_time">Booking Time:</label>
+              <input type="time" name="time" value="{{booking.time|time:'H:i'}}" required id="id_time">
+          </p>
+          <p>
+            <label for="id_guests">Guests:</label>
+            <select name="guests" class="form-control" id="id_guests">
+                {% with "12345678910" as numbers %}
+                    {% for i in get_range %}
+                        <option value="{{ i }}" {% if booking.guests == i|add:0 %}selected{% endif %}>{{ i }}</option>
+                    {% endfor %}
+                {% endwith %}
+            </select>
+        </p>
+        <button type="submit" class="book-button">Done</button>
+    </form>
+  </div>
+</div>
+{% endblock %}    

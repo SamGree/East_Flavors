@@ -1,10 +1,10 @@
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.http import JsonResponse
-
+from datetime import datetime, date, time
 from .forms import UserRegistrationForm, CustomLoginForm, BookingForm
 from .models import Table, Booking
 from .utils import find_available_table
@@ -136,3 +136,47 @@ def cancel_booking(request, id):
                 "or you don't have permission to cancel it."
                        },
             status=404)
+    
+
+"""
+get specific booking
+"""
+@login_required
+def get_booking(request, id):
+    booking = get_object_or_404(Booking, id=id)
+    return render(request, 'booking/edit_book.html', {'booking':booking, 'get_range':range(1,11)})    
+
+
+@login_required
+def update_booking(request, id):
+    if request.method == 'POST':
+        booking = get_object_or_404(Booking, id=id)
+        date_str = request.POST.get('date')
+        time_str = request.POST.get('time')
+        guests = request.POST.get('guests')
+        _date = datetime.strptime(date_str, "%Y-%m-%d").date()
+        _time = datetime.strptime(time_str, "%H:%M").time()
+        _guests = int(guests)
+        print("date type :", type(_date))
+        print("time type :", type(_time))
+        print("guests type :", type(guests))
+        if _date and _date >= date.today():
+            booking.date = _date
+        else:
+            messages.error(request, 'Invalid date!')
+            return render(request, 'booking/edit_book.html', {'booking':booking, 'get_range':range(1,11)})
+        
+        if _time and (time(11, 0) <= _time <= time(22, 0)):
+            booking.time = _time
+        else:
+            messages.error(request, 'Invalid time!')
+            return render(request, 'booking/edit_book.html', {'booking':booking, 'get_range':range(1,11)})
+        
+        if _guests and 11 > _guests > 0:
+            booking.guests = _guests
+        else:
+            messages.error(request, 'book for guests from 1 to 10!')
+            return render(request, 'booking/edit_book.html', {'booking':booking, 'get_range':range(1,11)})
+        booking.save()
+        messages.success(request, 'The booking updated successfully!')
+    return  redirect(reverse('user-bookings'))
