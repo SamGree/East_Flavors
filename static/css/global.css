@@ -101,7 +101,7 @@ button,
 textarea,
 select {
   font: inherit;
-  color: inherit;
+  padding: 5px 10px;
 }
 
 button {
