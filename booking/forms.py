@@ -61,7 +61,7 @@ class BookingForm(forms.ModelForm):
         time = self.cleaned_data['time']
         opening_time = datetime.time(11, 0)
         closing_time = datetime.time(22, 0)
-        if not (opening_time <= time <= closing_time):
+        if not (opening_time <= time < closing_time):
             raise forms.ValidationError(
                 "Booking time must be within (11:00 AM - 10:00 PM).")
         return time

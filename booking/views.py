@@ -24,7 +24,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('book-table')
+            return redirect('/')
     else:
         form = UserRegistrationForm()
     return render(request, 'booking/register.html', {'form': form})
@@ -166,7 +166,7 @@ def update_booking(request, id):
             messages.error(request, 'Invalid date!')
             return render(request, 'booking/edit_book.html', {'booking':booking, 'get_range':range(1,11)})
         
-        if _time and (time(11, 0) <= _time <= time(22, 0)):
+        if _time and (time(11, 0) <= _time < time(22, 0)):
             booking.time = _time
         else:
             messages.error(request, 'Invalid time!')

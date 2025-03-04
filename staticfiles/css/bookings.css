@@ -56,7 +56,6 @@
   background-color: var(--color-red-700);
 }
 
-
 @media screen and (max-width: 1024px) {
   .bookings-wrapper .bookings {
     width: 80%;
