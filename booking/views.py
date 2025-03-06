@@ -8,7 +8,7 @@ from datetime import datetime, date, time
 from .forms import UserRegistrationForm, CustomLoginForm, BookingForm
 from .models import Table, Booking
 from .utils import find_available_table
-from django.utils import timezone
+import time  as time_control
 from django.contrib import messages
 
 
@@ -157,26 +157,36 @@ def update_booking(request, id):
         _date = datetime.strptime(date_str, "%Y-%m-%d").date()
         _time = datetime.strptime(time_str, "%H:%M").time()
         _guests = int(guests)
-        print("date type :", type(_date))
-        print("time type :", type(_time))
-        print("guests type :", type(guests))
-        if _date and _date >= date.today():
-            booking.date = _date
-        else:
-            messages.error(request, 'Invalid date!')
-            return render(request, 'booking/edit_book.html', {'booking':booking, 'get_range':range(1,11)})
-        
-        if _time and (time(11, 0) <= _time < time(22, 0)):
-            booking.time = _time
-        else:
+
+        current_time_str = time_control.strftime("%H:%M", time_control.localtime()) # get current time
+        current_time = datetime.strptime(current_time_str, "%H:%M").time() # convert str --> datetime.time
+        print( current_time )
+        print(_time)
+
+        if _date and _time and _date == date.today() and _time > current_time :
+             booking.date = _date
+             booking.time = _time
+        if  _date and _time and _date == date.today() and _time <= current_time :
             messages.error(request, 'Invalid time!')
             return render(request, 'booking/edit_book.html', {'booking':booking, 'get_range':range(1,11)})
-        
-        if _guests and 11 > _guests > 0:
-            booking.guests = _guests
-        else:
-            messages.error(request, 'book for guests from 1 to 10!')
-            return render(request, 'booking/edit_book.html', {'booking':booking, 'get_range':range(1,11)})
+        else :
+            if _date and _date >= date.today(): # today == _date 
+                booking.date = _date
+            else:
+                messages.error(request, 'Invalid date!')
+                return render(request, 'booking/edit_book.html', {'booking':booking, 'get_range':range(1,11)})
+            
+            if _time and (time(11, 0) <= _time < time(22, 0)) :
+                booking.time = _time
+            else:
+                messages.error(request, 'Invalid time!')
+                return render(request, 'booking/edit_book.html', {'booking':booking, 'get_range':range(1,11)})
+            
+            if _guests and 11 > _guests > 0:
+                booking.guests = _guests
+            else:
+                messages.error(request, 'book for guests from 1 to 10!')
+                return render(request, 'booking/edit_book.html', {'booking':booking, 'get_range':range(1,11)})
         booking.save()
         messages.success(request, 'The booking updated successfully!')
     return  redirect(reverse('user-bookings'))

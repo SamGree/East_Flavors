@@ -34,78 +34,84 @@
     {% block head %} {% endblock head %}
   </head>
   <body>
-    <nav class="navbar">
-      <a href="{% url 'home' %}">
-        <div class="logo">
-          <img src="{% static 'img/logo2.jpg' %}" alt="Logo for restaurant" />
+    <div id="container">
+      <nav class="navbar">
+        <a href="{% url 'home' %}">
+          <div class="logo">
+            <img src="{% static 'img/logo2.jpg' %}" alt="Logo for restaurant" />
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="{% url 'home' %}">HOME</a></li>
+          <li><a href="{% url 'menu' %}">MENU</a></li>
+          {% if request.user.is_authenticated %}
+          <li><a href="{% url 'user-bookings' %}">BOOKINGS</a></li>
+          <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+          {% else %}
+          <li><a href="{% url 'login' %}">LOGIN</a></li>
+          <li><a href="{% url 'register' %}">REGISTER</a></li>
+          {% endif %}
+        </ul>
+        <div id="right-side" style="display: flex">
+          <p id="user-greeting-nav">
+            {% if request.user.is_authenticated %} Welcome
+            <span id="highlight-username">
+              {{request.user.username | title}}</span
+            >
+            {%endif%}
+          </p>
+          <!-- Hamburger Icon -->
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
-      </a>
+      </nav>
 
-      <ul class="nav-links">
-        <li><a href="{% url 'home' %}">HOME</a></li>
-        <li><a href="{% url 'menu' %}">MENU</a></li>
-        {% if request.user.is_authenticated %}
-        <li><a href="{% url 'user-bookings' %}">BOOKINGS</a></li>
-        <li><a href="{% url 'logout' %}">LOGOUT</a></li>
-        {% else %}
-        <li><a href="{% url 'login' %}">LOGIN</a></li>
-        <li><a href="{% url 'register' %}">REGISTER</a></li>
-        {% endif %}
-      </ul>
-      <p id="user-greeting-nav">
-        {% if request.user.is_authenticated %} Welcome
-        <span id="highlight-username"> {{request.user.username | title}}</span>
-        {%endif%}
-      </p>
-      <!-- Hamburger Icon -->
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+      {% if messages %}
+      <div id="messages">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
       </div>
-    </nav>
+      {% endif %}
 
-    {% if messages %}
-    <div id="messages">
-      {% for message in messages %}
-      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-      {% endfor %}
+      <!-- Container for image with scrollbar -->
+      <!-- <div class="image-container">
+          <img src="{% static 'img/home1.jpg' %}" alt="BBQ Image" />
+        </div> -->
+      {% block content %} {% endblock %}
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="address">
+            <h2>Address</h2>
+            <p>Gjutformsgatan 6,721 33 Västerås</p>
+          </div>
+          <div class="social-icons">
+            <!-- Font Awesome icons -->
+            <a href="mailto:info@example.com" target="_blank">
+              <i class="fas fa-envelope"></i>
+              <!-- Email Icon -->
+            </a>
+            <a href="https://instagram.com" target="_blank">
+              <i class="fab fa-instagram"></i>
+              <!-- Instagram Icon -->
+            </a>
+            <a href="https://facebook.com" target="_blank">
+              <i class="fab fa-facebook"></i>
+              <!-- Facebook Icon -->
+            </a>
+          </div>
+          <div class="established">
+            <p>est.2010</p>
+          </div>
+        </div>
+      </footer>
     </div>
-    {% endif %}
-
-    <!-- Container for image with scrollbar -->
-    <!-- <div class="image-container">
-      <img src="{% static 'img/home1.jpg' %}" alt="BBQ Image" />
-    </div> -->
-    {% block content %} {% endblock %}
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="address">
-          <h2>Address</h2>
-          <p>Gjutformsgatan 6,721 33 Västerås</p>
-        </div>
-        <div class="social-icons">
-          <!-- Font Awesome icons -->
-          <a href="mailto:info@example.com" target="_blank">
-            <i class="fas fa-envelope"></i>
-            <!-- Email Icon -->
-          </a>
-          <a href="https://instagram.com" target="_blank">
-            <i class="fab fa-instagram"></i>
-            <!-- Instagram Icon -->
-          </a>
-          <a href="https://facebook.com" target="_blank">
-            <i class="fab fa-facebook"></i>
-            <!-- Facebook Icon -->
-          </a>
-        </div>
-        <div class="established">
-          <p>est.2010</p>
-        </div>
-      </div>
-    </footer>
     <script src="{% static 'js/main.js' %}"></script>
     <script>
       var messages = document.getElementById("messages");
