@@ -24,7 +24,10 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
+            messages.success(request, 'Registration successful! Welcome to East flavore')  # ✅ Success message added
             return redirect('/')
+        else:
+            messages.error(request, 'Registration failed. Please check the form and try again.')  # ✅ Error message
     else:
         form = UserRegistrationForm()
     return render(request, 'booking/register.html', {'form': form})
@@ -45,7 +48,10 @@ def user_login(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
+                messages.success(request, f"Welcome back, {username}!")
                 return redirect('book-table')
+        else:
+            messages.error(request, "Invalid username or password.")
     else:
         form = CustomLoginForm()
     return render(request, 'booking/login.html', {'form': form})
@@ -54,6 +60,7 @@ def user_login(request):
 @login_required
 def user_logout(request):
     logout(request)
+    messages.success(request, "You have successfully logged out!")
     return redirect('home')
 
 
@@ -75,7 +82,19 @@ def book_table(request):
 
             tzname = request.COOKIES.get("django_timezone", "UTC")
 
-            # Find available table for the given date,time and number of guests
+            # Check if the selected date/time is in the past
+            current_datetime = datetime.now()
+            selected_datetime = datetime.combine(date, time)
+
+            if selected_datetime < current_datetime:
+                messages.error(
+                    request,
+                    "Booking time must be at least"
+                     "-one minute ahead of the current time!")
+                return render(
+                    request, 'booking/book_table.html', {'form': form})
+
+            # Find available table for the given date, time, and number of guests
             table = find_available_table(
                 date, time, guests, request.user, tzname)
 
@@ -88,7 +107,8 @@ def book_table(request):
                     time=time,
                     guests=guests
                 )
-                messages.success(request, 'Your booking has been successfully completed!')
+                messages.success(
+                    request, 'Your booking is successfully!')
                 return redirect(reverse('user-bookings'))
             else:
                 # No available table found, show an error message
@@ -138,13 +158,17 @@ def cancel_booking(request, id):
             status=404)
     
 
-"""
-get specific booking
-"""
 @login_required
 def get_booking(request, id):
+    """
+    get specific booking
+    """
     booking = get_object_or_404(Booking, id=id)
-    return render(request, 'booking/edit_book.html', {'booking':booking, 'get_range':range(1,11)})    
+    return render(
+        request,
+        'booking/edit_book.html',
+        {'booking': booking, 'get_range': range(1, 11)}
+        )    
 
 
 @login_required
@@ -158,35 +182,48 @@ def update_booking(request, id):
         _time = datetime.strptime(time_str, "%H:%M").time()
         _guests = int(guests)
 
-        current_time_str = time_control.strftime("%H:%M", time_control.localtime()) # get current time
-        current_time = datetime.strptime(current_time_str, "%H:%M").time() # convert str --> datetime.time
-        print( current_time )
+        current_time_str = time_control.strftime(
+            "%H:%M", time_control.localtime())
+        current_time = datetime.strptime(current_time_str, "%H:%M").time()
+        print(current_time)
         print(_time)
 
         if _date and _time and _date == date.today() and _time > current_time :
              booking.date = _date
              booking.time = _time
-        if  _date and _time and _date == date.today() and _time <= current_time :
+        if _date and _time and _date == date.today() and _time <= current_time :
             messages.error(request, 'Invalid time!')
-            return render(request, 'booking/edit_book.html', {'booking':booking, 'get_range':range(1,11)})
+            return render(
+                request,
+                'booking/edit_book.html', {
+                    'booking':booking, 'get_range':range(1,11)})
         else :
             if _date and _date >= date.today(): # today == _date 
                 booking.date = _date
             else:
                 messages.error(request, 'Invalid date!')
-                return render(request, 'booking/edit_book.html', {'booking':booking, 'get_range':range(1,11)})
+                return render(
+                    request,
+                    'booking/edit_book.html',
+                    {'booking':booking, 'get_range':range(1,11)})
             
             if _time and (time(11, 0) <= _time < time(22, 0)) :
                 booking.time = _time
             else:
                 messages.error(request, 'Invalid time!')
-                return render(request, 'booking/edit_book.html', {'booking':booking, 'get_range':range(1,11)})
+                return render(
+                    request,
+                    'booking/edit_book.html',
+                    {'booking': booking, 'get_range': range(1, 11)})
             
             if _guests and 11 > _guests > 0:
                 booking.guests = _guests
             else:
                 messages.error(request, 'book for guests from 1 to 10!')
-                return render(request, 'booking/edit_book.html', {'booking':booking, 'get_range':range(1,11)})
+                return render(
+                    request,
+                    'booking/edit_book.html',
+                    {'booking': booking, 'get_range': range(1, 11)})
         booking.save()
-        messages.success(request, 'The booking updated successfully!')
+        messages.success(request, 'Booking updated successfully!')
     return  redirect(reverse('user-bookings'))
