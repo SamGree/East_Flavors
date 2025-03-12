@@ -177,7 +177,7 @@ def update_booking(request, id):
 
     if request.user != booking.user:
         messages.error(request, 'Invalid user!')
-        return redirect(reverse('home'))
+        return redirect(reverse('login'))
 
     if request.method == 'POST':
         date_str = request.POST.get('date')
@@ -190,8 +190,7 @@ def update_booking(request, id):
         current_time_str = time_control.strftime(
             "%H:%M", time_control.localtime())
         current_time = datetime.strptime(current_time_str, "%H:%M").time()
-        print(current_time)
-        print(_time)
+        
 
         if _date and _time and _date == date.today() and _time > current_time :
              booking.date = _date
