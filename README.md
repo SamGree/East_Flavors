@@ -1,6 +1,6 @@
 # East flavors
 
-![chicken on the grill](/readme.images/ami1.png)
+![chicken on the grill](/readme.images/front.png)
 
 - Direct link to the website:
   [East flavors](https://east-flavors-6a20eeb5fe30.herokuapp.com/)
@@ -73,7 +73,7 @@
 - Home page
 
   - The homepage greets users with a visually appealing image of a delicious meal, immediately capturing attention and setting the mood for the dining experience.
-    ![chicken on the grill](/readme.images/home1.png)
+    ![chicken on the grill](/readme.images/front2.png)
 
   ***
 
@@ -93,7 +93,7 @@
   ***
 
   - Prominent buttons like _Explore Menu_ and _Book a table_ make it convenient for users to view the menu or make a reservation directly from the homepage.
-    ![img buttons](/readme.images/tablelogin.png)
+    ![img buttons](/readme.images/explore.menu.png)
 
   ***
 
@@ -224,16 +224,16 @@
   - Availability Info: Clear indication that the restaurant operates between 11 AM and 11 PM.
 
   - Confirmation Button: A prominent “Book Now” button to finalize reservations quickly.
-
-  - The restaurant image on the left.
-    ![navbar and user name](/readme.images/booking.img.png)
+    ![navbar and user name](/readme.images/booking.page.new.png)
 
   ***
 
-- Your Bookings:
+- My Bookings:
   - Booking Details Display: Shows user’s current booking with details like date, time, and number of guests.
-  - Cancel Booking Option: Includes a clear and clickable "Add Booking" and "Cancel booking". - Click on add booking it will take you to book a table form. - Click on cancel booking will delete reservation.
-    ![my booking page](/readme.images/add.booking.png)
+  - Cancel Booking Option: Includes a clear and clickable "Add Booking", "Edit booking" and "Cancel booking". - Click on add booking it will take you to book a table form.
+  - Click on edit booking it will take you to booking page with current booking you wish to update it.
+  - Click on cancel booking will delete reservation.
+    ![my booking page](/readme.images/my.booking.new.png)
   ***
   - Footer
     -Clickable Links: Social media icons for email, Instagram, and Facebook are visible.
@@ -284,8 +284,8 @@
       ![admin page for add table](/readme.images/admin.add.table.png)
     ***
     - Current tables overview in admin panel:
-      This section of the admin panel displays the current list of tables available in the restaurant, ordered by their seating capacity. Each table shows its capacity, allowing the site owner to easily manage and modify the table arrangement. The list contains tables with capacities ranging from 2 to 20 seats, giving flexibility to accommodate different group sizes.
-      ![admin current table](/readme.images/admin.current.table.png)
+      This section of the admin panel displays the current list of tables available in the restaurant, ordered by their seating capacity. Each table shows its capacity, allowing the site owner to easily manage and modify the table arrangement. The list contains tables with capacities ranging from 1 to 10 seats, giving flexibility to accommodate different group sizes.
+      ![admin current table](/readme.images/admincurrent.1.png)
 
 ---
 
