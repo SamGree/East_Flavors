@@ -24,10 +24,10 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            messages.success(request, 'Registration successful! Welcome to East flavore')  # ✅ Success message added
+            messages.success(request, 'Registration successful! Welcome to East flavore')  # Success message added
             return redirect('/')
         else:
-            messages.error(request, 'Registration failed. Please check the form and try again.')  # ✅ Error message
+            messages.error(request, 'Registration failed. Please check the form and try again.')  # Error message
     else:
         form = UserRegistrationForm()
     return render(request, 'booking/register.html', {'form': form})
@@ -116,7 +116,7 @@ def book_table(request):
                     None,
                     (
                         "Sorry, no table available for the selected date,"
-                        "time, and guests."
+                        "time, and guests, or you have booked table already in this hour!"
                         ))
 
     else:
@@ -173,8 +173,13 @@ def get_booking(request, id):
 
 @login_required
 def update_booking(request, id):
+    booking = get_object_or_404(Booking, id=id)
+
+    if request.user != booking.user:
+        messages.error(request, 'Invalid user!')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
-        booking = get_object_or_404(Booking, id=id)
         date_str = request.POST.get('date')
         time_str = request.POST.get('time')
         guests = request.POST.get('guests')
