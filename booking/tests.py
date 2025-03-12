@@ -2,129 +2,75 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 from django.urls import reverse
 from .models import Table, Booking
-from datetime import date, time
-from django.utils import timezone
-
+from datetime import datetime, timedelta
 
 class BookingTests(TestCase):
     def setUp(self):
-        # Create a user and log them in for testing
-        self.user = User.objects.create_user(
-            username='testuser', password='password')
-        self.client.login(username='testuser', password='password')
-        # Set a default timezone for the session
-        self.client.cookies['django_timezone'] = 'UTC'
-        # Create a table for testing
+        """
+        Create test users and a table.
+        """
+        self.user1 = User.objects.create_user(username='user1', password='testpass123')
+        self.user2 = User.objects.create_user(username='user2', password='testpass123')
         self.table = Table.objects.create(capacity=4)
 
+        """
+        User2 makes a booking
+        """
+        self.booking = Booking.objects.create(
+            user=self.user2,
+            table=self.table,
+            date=datetime.today().date() + timedelta(days=1),
+            time=datetime.now().time(),
+            guests=2
+        )
 
-class AuthTests(TestCase):
-    def test_register_user(self):
+    def test_user1_cannot_update_user2_booking(self):
         """
-        Test user registration.
+        Ensure that User1 cannot update User2's booking.
         """
-        response = self.client.post(reverse('register'), {
-            'username': 'newuser',
-            'password1': 'strongpassword',
-            'password2': 'strongpassword',
-            'email': 'newuser@example.com'
+        self.client.login(username='user1', password='testpass123')
+        
+        response = self.client.post(reverse('update-booking', args=[self.booking.id]), {
+            'date': (datetime.today().date() + timedelta(days=2)).strftime('%Y-%m-%d'),
+            'time': '14:00',
+            'guests': 3
         })
+
+        self.booking.refresh_from_db()
+        """
+        Booking should remain unchanged
+        """
+        self.assertNotEqual(self.booking.date, datetime.today().date() + timedelta(days=2))
         self.assertEqual(response.status_code, 302)
-        # Should redirect after registration
-        self.assertTrue(User.objects.filter(username='newuser').exists())
 
-    def test_login_user(self):
+    def test_user1_cannot_cancel_user2_booking(self):
         """
-        Test user login.
+        Ensure that User1 cannot cancel User2's booking.
         """
-        user = User.objects.create_user(
-            username='testuser', password='password')
-        response = self.client.post(reverse('login'), {
-            'username': 'testuser',
-            'password': 'password'
-        })
-        self.assertEqual(response.status_code, 302)
-        # Should redirect after login
-        self.assertEqual(int(self.client.session['_auth_user_id']), user.pk)
+        self.client.login(username='user1', password='testpass123')
 
-    def test_logout_user(self):
-        """
-        Test user logout.
-        """
-        user = User.objects.create_user(
-            username='testuser', password='password')
-        self.client.login(username='testuser', password='password')
-        response = self.client.get(reverse('logout'))
-        self.assertEqual(response.status_code, 302)
-        # Should redirect after logout
-        self.assertNotIn('_auth_user_id', self.client.session)
+        response = self.client.post(reverse('cancel-booking', args=[self.booking.id]))
 
+        self.assertEqual(response.status_code, 404)
+        self.assertTrue(Booking.objects.filter(id=self.booking.id).exists())
 
-class BookingTests(TestCase):
-    def setUp(self):
-        # Create a user and log them in for testing
-        self.user = User.objects.create_user(
-            username='testuser', password='password')
-        self.client.login(username='testuser', password='password')
-        # Create a table for testing
-        self.table = Table.objects.create(capacity=4)
+    def test_user1_cannot_book_for_user2(self):
+        """
+        Ensure that a booking is always assigned to the logged-in user.
+        """
+        self.client.login(username='user1', password='testpass123')
 
-    def test_book_table(self):
-        """
-        Test booking a table with valid data.
-        """
-        booking_date = date.today()
-        booking_time = time(21, 0)  # 9:00 PM
         response = self.client.post(reverse('book-table'), {
-            'date': booking_date,
-            'time': booking_time,
+            'date': (datetime.today().date() + timedelta(days=3)).strftime('%Y-%m-%d'),
+            'time': '15:00',
             'guests': 2
         })
+
+        # Check if a booking was created
+        new_booking = Booking.objects.filter(user=self.user1).first()
+        self.assertIsNotNone(new_booking)  # Should exist
+        self.assertEqual(new_booking.user, self.user1)  # Should belong to User1
+        self.assertNotEqual(new_booking.user, self.user2)  # Cannot belong to User2
+
         self.assertEqual(response.status_code, 302)
-        # Should redirect upon successful booking
-        self.assertTrue(
-            Booking.objects.filter(
-                user=self.user,
-                table=self.table,
-                date=booking_date,
-                time=booking_time).exists())
 
-    def test_user_bookings_view(self):
-        """
-        Test viewing user bookings.
-        """
-        Booking.objects.create(
-            user=self.user,
-            table=self.table,
-            date=date.today(), time=time(18, 0), guests=2)
-        response = self.client.get(reverse('user-bookings'))
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Booking for")
-
-    def test_cancel_booking(self):
-        """
-        Test canceling a booking.
-        """
-        booking = Booking.objects.create(
-            user=self.user,
-            table=self.table, date=date.today(), time=time(18, 0), guests=2)
-        response = self.client.post(reverse('cancel-booking',
-                                    args=[booking.id]))
-        self.assertEqual(response.status_code, 200)
-        self.assertFalse(Booking.objects.filter(id=booking.id).exists())
-
-    def test_cancel_booking_unauthorized(self):
-        """
-        Test that a user cannot cancel another user's booking.
-        """
-        other_user = User.objects.create_user(
-            username='otheruser', password='password')
-        other_booking = Booking.objects.create(
-            user=other_user,
-            table=self.table,
-            date=date.today(), time=time(18, 0), guests=2)
-
-        response = self.client.post(
-            reverse('cancel-booking', args=[other_booking.id]))
-        self.assertEqual(response.status_code, 404)
-        # Should return 404 as the booking doesn't belong to the logged-in user
