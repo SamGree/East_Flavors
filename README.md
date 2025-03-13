@@ -241,6 +241,35 @@
 
 ---
 
+### User notification
+
+- First time user register.
+  ![welcome](/readme.images/welcome.newuser.png)
+  ***
+- User logout.
+  ![logout](/readme.images/logout.message.png)
+  ***
+- User logged in.
+  ![login](/readme.images/login.welcome.back.png)
+  ***
+- User booking successful.
+  ![booking](/readme.images/booking.successfull.png)
+  ***
+- User udate booking.
+  ![booking](/readme.images/booking.update.png)
+  ***
+- User booking alert
+  ![one.m.ahead](/readme.images/one.m.ahead.png)
+  ***
+- User selected date in the past.
+  ![date](/readme.images/date.invalid.png)
+  ***
+- User selected time in the past.
+  ![time](/readme.images/time.invalid.png)
+  ***
+- User canceled booking.
+  ![canceled](/readme.images/booking.cancel.png)
+
 ---
 
 ## Admin page
@@ -311,13 +340,13 @@
 
 ## Models
 
-- User to booking (Many-to-One relationship):
-  - User field in the booking model is a foreign key to the User model. User can have many bookings, but each booking belongs to one user, which represents a many-to-one relationship.
-    - user = models.ForeignKey(
-      User, on_delete=models.CASCADE, related_name='bookings')
-- Table to Booking (Many-to-One relationship):
-  - Table field in the booking model is a foreign key to the table model, also representing a many-to-one relationship.It is mean table can be booked by multiple bookings, but each booking is assigned to one table.
-    - table = models.ForeignKey(Table, on_delete=models.CASCADE, related_name='bookings')
+- Booking Model.
+- Represents a reservation made by a user for a table.
+  - user: Many-to-One → A user can have multiple bookings, but each booking belongs to one user.
+  - table: Many-to-One → A table can have multiple bookings, but each booking is for one table.
+  - date & time: Stores reservation date and time.
+  - guests: Number of guests (1-10), with validation and predefined choices.
+  - If a user or table is deleted, related bookings are removed.
 
 ---
 
