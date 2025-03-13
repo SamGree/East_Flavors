@@ -428,6 +428,23 @@
 
 ---
 
+- Manual test for booking.
+
+| Test item                           | Test Carried Out                                    | Result                                                 | Pass/Fail |
+| ----------------------------------- | --------------------------------------------------- | ------------------------------------------------------ | --------- |
+| Select a current or future date     | Choose a valid date                                 | Date is accepted                                       | PASS      |
+| Select a past date                  | Choose a date in the past                           | "Date Invalid" notification appears                    | PASS      |
+| Select a time within allowed range  | Choose a time between 11:00 AM - 10:00 PM           | Time is accepted                                       | PASS      |
+| Select a time outside allowed range | Choose a time before 11:00 AM and 10:00 PM or after | "Time Invalid" notification appears                    | PASS      |
+| Select a past time for today        | Choose a past time for the current day              | "Time Invalid" notification appears                    | PASS      |
+| Leave date field empty              | Try submitting without selecting a date             | Error message appears                                  | PASS      |
+| Leave time field empty              | Try submitting without selecting a time             | Error message appears                                  | PASS      |
+| Submit with valid inputs            | Choose a valid date, time, and guest number         | "Booking is successful"message appears                 | PASS      |
+| Cancel booking                      | Click on cancel booking                             | "Cancel booking successful"message appears             | PASS      |
+| Edit booking                        | Click on the existing booking you wish to edit      | Details for chosen booking appears in the booking page | PASS      |
+
+---
+
 - Automatic Testing
   - Testing Menu app. - Testing is essential to ensure that our application’s features and components work as expected. This suite of tests focuses on verifying the functionality of the Menu model and related views in the application. These tests ensure that: - The data models behave correctly when creating and accessing menu items. - The views render the appropriate templates, load content correctly, and display expected data to users.
     ![auto test](/readme.images/menu.crud.png)
