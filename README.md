@@ -296,14 +296,14 @@
 - Mobile wireframe:
 - Same wireframe applies to the tablet.
 
-![home page](/readme.images/mobile.home.page.png)![home page](/readme.images/mobile.home.navbar.png)![home page](/readme.images/menu.mobile.png)![home page](/readme.images/login.mobile.png)![home page](/readme.images/register.mobile.png)![home page](/readme.images/booktable.mobile.png)![home page](/readme.images/mobile.mybooking.png)
+![home page](/readme.images/mobile.home.page.png)![home page](/readme.images/mobile.home.navbar.png)![home page](/readme.images/menu.mobile.png)![home page](/readme.images/login.mobile.png)![home page](/readme.images/register.mobile.png)![home page](/readme.images/booktable.mobile.png)![home page](/readme.images/mobile.mybooking1.png)
 
 ---
 
 - Desktop and laptop wireframe:
   ![wireframe for laptop](/readme.images/wire.laptop.home.png)
   ![wireframe for laptop](/readme.images/wire.laptop.menu.png)
-  ![wireframe for laptop](/readme.images/wire.laptop.register.png)![wireframe for laptop](/readme.images/wire.laptop.login.png)![wireframe for laptop](/readme.images/wire.laptop.book.table.png)![wireframe for laptop](/readme.images/wire.laptop.mybooking.png)
+  ![wireframe for laptop](/readme.images/wire.laptop.register.png)![wireframe for laptop](/readme.images/wire.laptop.login.png)![wireframe for laptop](/readme.images/wire.laptop.book.table.png)![wireframe for laptop](/readme.images/lap.booking1.png)
 
 ---
 
@@ -322,7 +322,7 @@
 ---
 
 - Bookings Model
-  ![list of field, type and description](/readme.images/booking.model.png)
+  ![list of field, type and description](/readme.images/model.booking1.png)
 
 ---
 
