@@ -23,12 +23,11 @@
 
 - Create an operational website for a restaurant.
 - Enable users to reserve a table for their preferred date and time through an easy-to-use form.
-- It should also provide users with the ability to easily book more tables (**but should not choose same hour with same date, but 1 hour apart**) add or cancel their reservations.
+- It should also provide users with the ability to easily book more tables (**but should not choose same hour with same date, but 1 hour apart**)
+- Add, edit or cancel their reservations.
 - Display the restaurant's menu to the user.
 - Enable users to register an account.
 - East Flavors restaurant is co-owned by two partners who oversee daily operations. They manage a staff organized into two teams, ensuring the restaurant is open every day.
-
----
 
 ---
 
@@ -63,8 +62,6 @@
     - Using wireframes, I sketched out the layout for each page, focusing on simplicity and ease of navigation. The homepage was designed to feature stunning food photography and an immediate call to action (menu exploration and booking a table).
   - Finalization & Launch:
     - The final design of East Flavors reflects a welcoming, vibrant, and user-friendly experience. Each element, from the color palette to typography and imagery, was thoughtfully crafted to engage users while showcasing the restaurant’s offerings and simplifying the online booking process.
-
----
 
 ---
 
@@ -119,8 +116,6 @@
 
 ---
 
----
-
 - Menu page
   - Logo left corner. Clicking the logo in the top left corner will take you back to the homepage.
     ![logo img](/readme.images/logo.png)
@@ -135,8 +130,6 @@
 - Footer
   - Social media icons for email, Instagram, and Facebook are visible.
     ![Social media icons](/readme.images/footer.png)
-
----
 
 ---
 
@@ -177,8 +170,6 @@
 
 ---
 
----
-
 - Login Page
 
   - Logo left corner. Clicking the logo in the top left corner will take you back to the homepage.
@@ -202,8 +193,6 @@
   - Footer
     -Clickable Links: Social media icons for email, Instagram, and Facebook are visible.
     ![Social media icons](/readme.images/footer.png)
-
----
 
 ---
 
@@ -255,7 +244,7 @@
 - User booking successful.
   ![booking](/readme.images/booking.successfull.png)
   ***
-- User udate booking.
+- User update booking.
   ![booking](/readme.images/booking.update.png)
   ***
 - User booking alert
@@ -318,8 +307,6 @@
 
 ---
 
----
-
 ## Wireframe.
 
 - Mobile wireframe:
@@ -333,8 +320,6 @@
   ![wireframe for laptop](/readme.images/wire.laptop.home.png)
   ![wireframe for laptop](/readme.images/wire.laptop.menu.png)
   ![wireframe for laptop](/readme.images/wire.laptop.register.png)![wireframe for laptop](/readme.images/wire.laptop.login.png)![wireframe for laptop](/readme.images/wire.laptop.book.table.png)![wireframe for laptop](/readme.images/lap.booking1.png)
-
----
 
 ---
 
@@ -357,8 +342,6 @@
 
 - Menu Model
   ![list of field, type and description](/readme.images/menu.model.png)
-
----
 
 ---
 
@@ -423,8 +406,6 @@
 
 ---
 
----
-
 ## Manual testing
 
 - Manual test for home page.
@@ -465,8 +446,6 @@
     - test_user1_cannot_book_for_user2.
       - Logs in as User1 and creates a booking.
       - The booking should be assigned to User1 (not User2), ensuring users can only book for themselves.
-
----
 
 ---
 

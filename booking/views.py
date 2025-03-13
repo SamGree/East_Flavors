@@ -69,8 +69,8 @@ def user_logout(request):
 def book_table(request):
     """
     Handles table booking for logged-in users.
-    - On POST, processes the booking form, finds an available table,
-      and creates a booking or shows an error if no table is available.
+    On POST, processes the booking form, finds an available table,
+    and creates a booking or shows an error if no table is available.
     """
     if request.method == 'POST':
         form = BookingForm(request.POST)
@@ -108,7 +108,7 @@ def book_table(request):
                     guests=guests
                 )
                 messages.success(
-                    request, 'Your booking is successfully!')
+                    request, 'Your booking is successful!')
                 return redirect(reverse('user-bookings'))
             else:
                 # No available table found, show an error message
