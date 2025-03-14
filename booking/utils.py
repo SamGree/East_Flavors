@@ -11,7 +11,7 @@ def find_available_table(date, time, guests, user, tzname):
     one_hour = timedelta(hours=1)
 
     print(requested_datetime)
-    local_tz = timezone(tzname or "UTC")  # You can change this to your actual timezone
+    local_tz = timezone(tzname or "UTC")
     local_aware_datetime = local_tz.localize(requested_datetime)
 
     # Convert the timezone-aware datetime to UTC

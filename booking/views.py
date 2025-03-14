@@ -8,7 +8,7 @@ from datetime import datetime, date, time
 from .forms import UserRegistrationForm, CustomLoginForm, BookingForm
 from .models import Table, Booking
 from .utils import find_available_table
-import time  as time_control
+import time as time_control
 from django.contrib import messages
 
 
@@ -24,10 +24,12 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            messages.success(request, 'Registration successful! Welcome to East flavore')  # Success message added
+            messages.success(
+                request, 'Registration successful! Welcome to East flavore')
             return redirect('/')
         else:
-            messages.error(request, 'Registration failed. Please check the form and try again.')  # Error message
+            messages.error(
+                request, 'Registration failed. Please check the form again.')
     else:
         form = UserRegistrationForm()
     return render(request, 'booking/register.html', {'form': form})
@@ -90,11 +92,11 @@ def book_table(request):
                 messages.error(
                     request,
                     "Booking time must be at least"
-                     "-one minute ahead of the current time!")
+                    "-one minute ahead of the current time!")
                 return render(
                     request, 'booking/book_table.html', {'form': form})
 
-            # Find available table for the given date, time, and number of guests
+            # Find available table for the given date, time, guests
             table = find_available_table(
                 date, time, guests, request.user, tzname)
 
@@ -146,7 +148,7 @@ def cancel_booking(request, id):
     if booking.exists():
         booking.delete()
         response_data = {'message': "Booking canceled successfully!"}
-        messages.error(request,'Booking canceled successfully')
+        messages.error(request, 'Booking canceled successfully')
         return JsonResponse(response_data, status=200)
     else:
         messages.error(request, 'Booking not found')
@@ -156,7 +158,7 @@ def cancel_booking(request, id):
                 "or you don't have permission to cancel it."
                        },
             status=404)
-    
+
 
 @login_required
 def get_booking(request, id):
@@ -168,7 +170,7 @@ def get_booking(request, id):
         request,
         'booking/edit_book.html',
         {'booking': booking, 'get_range': range(1, 11)}
-        )    
+        )
 
 
 @login_required
@@ -190,28 +192,28 @@ def update_booking(request, id):
         current_time_str = time_control.strftime(
             "%H:%M", time_control.localtime())
         current_time = datetime.strptime(current_time_str, "%H:%M").time()
-        
 
         if _date and _time and _date == date.today() and _time > current_time :
-             booking.date = _date
-             booking.time = _time
+            booking.date = _date
+            booking.time = _time
+            
         if _date and _time and _date == date.today() and _time <= current_time :
             messages.error(request, 'Invalid time!')
             return render(
                 request,
                 'booking/edit_book.html', {
                     'booking':booking, 'get_range':range(1,11)})
-        else :
-            if _date and _date >= date.today(): # today == _date 
+        else:
+            if _date and _date >= date.today():
                 booking.date = _date
             else:
                 messages.error(request, 'Invalid date!')
                 return render(
                     request,
                     'booking/edit_book.html',
-                    {'booking':booking, 'get_range':range(1,11)})
-            
-            if _time and (time(11, 0) <= _time < time(22, 0)) :
+                    {'booking': booking, 'get_range': range(1, 11)})
+
+            if _time and (time(11, 0) <= _time < time(22, 0)):
                 booking.time = _time
             else:
                 messages.error(request, 'Invalid time!')
@@ -219,7 +221,7 @@ def update_booking(request, id):
                     request,
                     'booking/edit_book.html',
                     {'booking': booking, 'get_range': range(1, 11)})
-            
+
             if _guests and 11 > _guests > 0:
                 booking.guests = _guests
             else:
@@ -230,4 +232,4 @@ def update_booking(request, id):
                     {'booking': booking, 'get_range': range(1, 11)})
         booking.save()
         messages.success(request, 'Booking updated successfully!')
-    return  redirect(reverse('user-bookings'))
+    return redirect(reverse('user-bookings'))
