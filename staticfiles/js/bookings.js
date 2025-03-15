@@ -1,6 +1,8 @@
 // Select all cancel booking buttons and add event listeners to handle the cancellation.
 const cancelBookingBtns = document.querySelectorAll(".cancel-booking");
-cancelBookingBtns.forEach((booking) => booking.addEventListener("click", cancelBooking));
+cancelBookingBtns.forEach((booking) =>
+  booking.addEventListener("click", cancelBooking)
+);
 
 /*
   Handles the booking cancellation when a user clicks the cancel button.
@@ -17,18 +19,22 @@ async function cancelBooking(e) {
   const hostLocation = window.location.origin;
 
   /* Send the PATCH request to cancel the booking*/
-  const response = await fetch(`${hostLocation}/booking/cancel-booking/${bookingId}/`, {
-    method: "PATCH",
-    credentials: "same-origin",
-    headers: {
-      "Content-Type": "application/json",
-      "X-CSRFToken": token,
-    },
-  });
+  const response = await fetch(
+    `${hostLocation}/booking/cancel-booking/${bookingId}/`,
+    {
+      method: "PATCH",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": token,
+      },
+    }
+  );
   /* If successful, remove the booking element from the DOM*/
   if (response.ok) {
     bookingElement.remove();
     console.log("Booking canceled successfully!");
+    window.location.reload();
   } else if (!response.ok) {
     const errorData = await response.json();
     console.error("Error:", errorData);

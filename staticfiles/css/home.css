@@ -10,7 +10,14 @@
 .home-wrapper #headline {
   font-size: 4rem;
   text-align: center;
-  padding-top: 14rem;
+  padding: 5px 22px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.action-btns .button-link {
+  padding: 5px 22px;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
 }
 
 .home-wrapper .hero {
@@ -20,6 +27,13 @@
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  flex-direction: column;
 }
 
 .home-wrapper .action-btns {

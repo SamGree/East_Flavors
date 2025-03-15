@@ -23,7 +23,7 @@
 
 .bookings-wrapper .bookings .booking {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   background-color: var(--color-grey-100);
   padding: 15px 20px;
   width: 100%;
@@ -37,8 +37,12 @@
   cursor: pointer;
 }
 
+.booking-buttons {
+  margin-top: 20px;
+}
+
 .bookings-wrapper .bookings .booking .cancel-booking,
-.bookings-wrapper .bookings .booking .add-booking {
+.bookings-wrapper .bookings .add-booking {
   padding: 5px 10px;
   border-radius: 10px;
   background-color: var(--color-blue-100);
@@ -47,13 +51,35 @@
   font-weight: 600;
   border: none;
   transition: all 0.3s;
+  text-decoration: none;
 }
 
 .bookings-wrapper .bookings .booking .cancel-booking:hover,
-.bookings-wrapper .bookings .booking .add-booking:hover {
+.bookings-wrapper .bookings .add-booking:hover {
   transform: scale(1.1);
   cursor: pointer;
   background-color: var(--color-red-700);
+}
+
+.bookings-wrapper .bookings .booking .cancel-booking:hover {
+  background-color: var(--color-red-700);
+}
+
+.bookings-wrapper .bookings .add-booking:hover {
+  background-color: var(--color-green-100);
+}
+
+.edit-button {
+  margin: 5px 20px;
+  padding: 5.2px 14px !important;
+  line-height: 20.5px;
+  display: inline-block;
+  height: 32px;
+}
+
+.add-booking {
+  padding: 5.2px 14px !important;
+  display: inline-block;
 }
 
 @media screen and (max-width: 1024px) {
