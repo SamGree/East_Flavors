@@ -9,9 +9,9 @@
 # Table of Contents
 
 - [Design Philosophy](#design-philosophy)
+- [Design Wireframe](#design-wireframe)
 - [Key Features](#key-features)
 - [Admin page](#admin-page)
-- [Wireframe](#wireframe)
 - [Models](#models)
 - [Technologies Used](#technologies-used)
 - [Manual testing](#manual-testing)'
@@ -62,6 +62,22 @@
     - Using wireframes, I sketched out the layout for each page, focusing on simplicity and ease of navigation. The homepage was designed to feature stunning food photography and an immediate call to action (menu exploration and booking a table).
   - Finalization & Launch:
     - The final design of East Flavors reflects a welcoming, vibrant, and user-friendly experience. Each element, from the color palette to typography and imagery, was thoughtfully crafted to engage users while showcasing the restaurant’s offerings and simplifying the online booking process.
+
+---
+
+## Design Wireframe.
+
+- Mobile wireframe:
+- Same wireframe applies to the tablet.
+
+![home page](/readme.images/mobile.home.page.png)![home page](/readme.images/mobile.home.navbar.png)![home page](/readme.images/menu.mobile.png)![home page](/readme.images/login.mobile.png)![home page](/readme.images/register.mobile.png)![home page](/readme.images/booktable.mobile.png)![home page](/readme.images/mobile.mybooking1.png)
+
+---
+
+- Desktop and laptop wireframe:
+  ![wireframe for laptop](/readme.images/wire.laptop.home.png)
+  ![wireframe for laptop](/readme.images/wire.laptop.menu.png)
+  ![wireframe for laptop](/readme.images/wire.laptop.register.png)![wireframe for laptop](/readme.images/wire.laptop.login.png)![wireframe for laptop](/readme.images/wire.laptop.book.table.png)![wireframe for laptop](/readme.images/lap.booking1.png)
 
 ---
 
@@ -307,20 +323,6 @@
 
 ---
 
-## Wireframe.
-
-- Mobile wireframe:
-- Same wireframe applies to the tablet.
-
-![home page](/readme.images/mobile.home.page.png)![home page](/readme.images/mobile.home.navbar.png)![home page](/readme.images/menu.mobile.png)![home page](/readme.images/login.mobile.png)![home page](/readme.images/register.mobile.png)![home page](/readme.images/booktable.mobile.png)![home page](/readme.images/mobile.mybooking1.png)
-
----
-
-- Desktop and laptop wireframe:
-  ![wireframe for laptop](/readme.images/wire.laptop.home.png)
-  ![wireframe for laptop](/readme.images/wire.laptop.menu.png)
-  ![wireframe for laptop](/readme.images/wire.laptop.register.png)![wireframe for laptop](/readme.images/wire.laptop.login.png)![wireframe for laptop](/readme.images/wire.laptop.book.table.png)![wireframe for laptop](/readme.images/lap.booking1.png)
-
 ---
 
 ## Models
@@ -495,16 +497,10 @@
     ***
   - Pep8
     - Link for: [test python code](https://pep8ci.herokuapp.com/)
-    - All Python code has been thoroughly tested, and the results show **no errors were found.** Here are a few examples.
-      ![python test](/readme.images/python.test.png)
-      ![python test](/readme.images/python.test1.png)
-      ![python test](/readme.images/python.test2.png)
-      ![python test](/readme.images/python.test3.png)
+    - All Python code has been thoroughly tested, and the results show **no errors were found.**
   - Lighthouse
     - Lighthouse .This test is been done on my laptop.  
       ![light house](/readme.images/light.house.png)
-    - This is result lighthouse when my mentor test it on his laptop.
-      ![light house](/readme.images/light.house.mentor.png)
 
 ---
 

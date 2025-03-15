@@ -23,7 +23,7 @@
 
     <form method="post" class="book-table-form">
       {% csrf_token %} {{ form.as_p }}
-      <p>Booking time must be within (11:00 AM - 10:00 PM).</p>
+      <p>Booking time must be within 11:00 AM - 9:59 PM.</p>
       <button type="submit" class="book-button">Book Now</button>
     </form>
   </div>
