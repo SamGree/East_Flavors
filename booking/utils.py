@@ -1,6 +1,5 @@
 from .models import Table, Booking
 from datetime import datetime, timedelta, timezone as datetime_timezone
-from datetime import datetime
 from pytz import timezone, utc
 
 
