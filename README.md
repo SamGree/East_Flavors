@@ -449,7 +449,7 @@
 
 - Automatic Testing
   - Testing Menu app. - Testing is essential to ensure that our application’s features and components work as expected. This suite of tests focuses on verifying the functionality of the Menu model and related views in the application. These tests ensure that: - The data models behave correctly when creating and accessing menu items. - The views render the appropriate templates, load content correctly, and display expected data to users.
-    ![auto test](/readme.images/menu.crud.png)
+    ![auto test](/readme.images/menu.crud.png).
 
 ---
 
