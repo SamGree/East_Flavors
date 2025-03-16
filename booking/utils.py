@@ -1,4 +1,4 @@
-from .models import Table, Booking
+from .models import Table, Booking 
 from datetime import datetime, timedelta, timezone as datetime_timezone
 from pytz import timezone, utc
 
